@@ -1,0 +1,174 @@
+{
+ "generated": "2026-10-26T18:47:37Z",
+ "search_date": "2026-10-26",
+ "search_terms": [
+  "VCSL dataset ... download license",
+  "VCDB large-scale video copy detection database",
+  "WildDeepfake dataset license",
+  "dataset real-world video reposts misinformation cascades near-duplicate",
+  "Video Similarity Challenge YFCC100M licence",
+  "CC_WEB_VIDEO / VCDB / EVVE download",
+  "YFCC100M video license",
+  "FaceForensics++/DFDC/Celeb-DF/FakeAVCeleb access",
+  "FakeSV / FVC / Deepfake-Eval-2024",
+  "LibriSpeech/Common Voice/VoxCeleb/VGGSound/AudioSet licence",
+  "ANAKIN VADER dataset licence",
+  "influence operations datasets Twitter/Reddit/Telegram/TikTok",
+  "HMDB51 / UCF101 / Kinetics licence",
+  "DAVIS 2017 / Xiph / Internet Archive reuse",
+  "Zenodo API: COVID YouTube removed videos accounts",
+  "Zenodo API: YouTube video sharing accounts timestamps coordinated",
+  "Zenodo API: near-duplicate video reposts social media accounts"
+ ],
+ "candidates_considered": 31,
+ "commons": {
+  "queries": [
+   [
+    "speech",
+    "speech"
+   ],
+   [
+    "speech",
+    "address to the nation"
+   ],
+   [
+    "interview",
+    "interview"
+   ],
+   [
+    "press",
+    "press conference"
+   ],
+   [
+    "news",
+    "news report"
+   ],
+   [
+    "lecture",
+    "lecture"
+   ],
+   [
+    "protest",
+    "protest march"
+   ],
+   [
+    "street",
+    "street scene"
+   ],
+   [
+    "traffic",
+    "traffic"
+   ],
+   [
+    "market",
+    "market"
+   ],
+   [
+    "wildlife",
+    "wildlife"
+   ],
+   [
+    "animals",
+    "animals zoo"
+   ],
+   [
+    "sports",
+    "football match"
+   ],
+   [
+    "sports",
+    "athletics"
+   ],
+   [
+    "music",
+    "concert"
+   ],
+   [
+    "festival",
+    "festival parade"
+   ],
+   [
+    "cooking",
+    "cooking"
+   ],
+   [
+    "science",
+    "experiment"
+   ],
+   [
+    "space",
+    "NASA"
+   ],
+   [
+    "nature",
+    "waterfall"
+   ],
+   [
+    "transport",
+    "train"
+   ],
+   [
+    "city",
+    "timelapse city"
+   ],
+   [
+    "workshop",
+    "craft workshop"
+   ],
+   [
+    "education",
+    "classroom"
+   ],
+   [
+    "ceremony",
+    "ceremony"
+   ],
+   [
+    "disaster",
+    "flood"
+   ],
+   [
+    "tutorial",
+    "tutorial"
+   ],
+   [
+    "history",
+    "archival footage 1960s"
+   ]
+  ],
+  "per_query_max_new_files": 4,
+  "file_size_bytes": [
+   300000,
+   45000000
+  ],
+  "licence_gate": "CC0 | Public domain | CC BY | CC BY-SA (NC/ND/unknown rejected)",
+  "stem_dedupe": "first 18 letters of normalised title",
+  "qc": "duration 8-120 s, height >=240, no decode errors, not mostly black/static, no exact/near duplicate (dHash >=45% frame match), not non-real-world CGI/simulation (keyword screen + manual list)"
+ },
+ "anakin": {
+  "rule": "sort by sha256('orvex-anakin-v1'+video-id); first 50 per manipulation type while cumulative planned bytes <= 3 GB; full-length videos excluded",
+  "selected_pairs": 250
+ },
+ "variants": {
+  "transformations": "T01-T14",
+  "chains": "C1-C5",
+  "donor_and_caption_pick": "sha256 of root media id over eligible pool (other-theme donors preferred)",
+  "test_only_types": [
+   "T11",
+   "T12",
+   "T13",
+   "T14"
+  ]
+ },
+ "splits": {
+  "unit": "source family; Commons families grouped by search theme",
+  "pattern": "14 train / 3 val / 3 test per 20 themes (Commons) or families (ANAKIN), stride 7 over sorted order",
+  "seed": "orvex-split-20261026",
+  "version": "split-v2"
+ },
+ "negatives": {
+  "easy": "different search theme",
+  "hard": "same search theme (label uncertain)",
+  "within": "same split only"
+ }
+}

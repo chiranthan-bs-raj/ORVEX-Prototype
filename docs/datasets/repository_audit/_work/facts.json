@@ -1,0 +1,806 @@
+{
+ "integrity": [
+  [
+   "training_pairs.media_a_id -> master|variants",
+   0
+  ],
+  [
+   "training_pairs.media_b_id -> master|variants",
+   0
+  ],
+  [
+   "training_pairs.relationship_id -> edges",
+   0
+  ],
+  [
+   "training_pairs.evidence_id -> evidence_ledger",
+   0
+  ],
+  [
+   "edges.media_a_id -> master|variants",
+   0
+  ],
+  [
+   "edges.media_b_id -> master|variants",
+   61
+  ],
+  [
+   "edges.evidence_id -> evidence_ledger",
+   0
+  ],
+  [
+   "observations.media_id -> master",
+   0
+  ],
+  [
+   "observations.evidence_id -> evidence_ledger",
+   0
+  ],
+  [
+   "master.evidence_id -> evidence_ledger",
+   0
+  ],
+  [
+   "duplicate_map ids -> master",
+   0
+  ],
+  [
+   "feature_manifest.media_id -> master|variants (excl. ALL_LOCAL)",
+   0
+  ],
+  [
+   "variant.root_source_media_id -> master",
+   0
+  ],
+  [
+   "variant.direct_parent_media_id -> master|variants",
+   0
+  ],
+  [
+   "run_log.variant_media_id -> variants",
+   0
+  ],
+  [
+   "split_manifest.source_family_id -> master|ANAKIN families",
+   0
+  ],
+  [
+   "group_examples member ids -> master|variants",
+   0
+  ]
+ ],
+ "features": {
+  "visual_records": 1727,
+  "audio_records": 1727,
+  "visual_orphans": 0,
+  "local_media_ids": 1727,
+  "local_without_visual": 0,
+  "visual_duplicates": 0
+ },
+ "variants": {
+  "registry_rows": 1133,
+  "passed": 1131,
+  "failed": 2,
+  "files_on_disk": 1132,
+  "extra_files_on_disk": [
+   "data/controlled_variants/media/P87190658/CV-P87190658-V10.mp4"
+  ],
+  "registered_missing_on_disk": [],
+  "chain_complete": 1131,
+  "failed_with_file_on_disk": [
+   "CV-P87190658-V10"
+  ],
+  "by_transformation": {
+   "recompress_low": 220,
+   "watermark_overlay": 165,
+   "crop_center": 110,
+   "caption_burn_in": 110,
+   "reencode_hq": 55,
+   "trim_middle": 55,
+   "trim_head": 55,
+   "trim_tail": 55,
+   "audio_replace": 55,
+   "mirror_color_shift": 55,
+   "speed_change": 55,
+   "reupload_sim": 55,
+   "audio_noise_mix": 44,
+   "audio_mute": 42
+  },
+  "by_depth": {
+   "1": 746,
+   "2": 275,
+   "3": 110
+  }
+ },
+ "lineage_rows": 1151,
+ "splits": {
+  "families_by_dataset_split": {
+   "test": {
+    "RW-01": 7,
+    "RW-02": 36
+   },
+   "train": {
+    "RW-01": 40,
+    "RW-02": 175
+   },
+   "val": {
+    "RW-01": 8,
+    "RW-02": 39
+   }
+  },
+  "pairs_by_split": {
+   "train": 6878,
+   "excluded": 3731,
+   "test": 1721,
+   "val": 1329
+  },
+  "cross_split_pairs": 0,
+  "variant_split_mismatch": 0,
+  "heldout_in_train_val_pairs": 0,
+  "negatives_total": 952,
+  "negatives_same_family": 0,
+  "negatives_touching_duplicate_records": 0,
+  "hardness_by_split": {
+   "easy": {
+    "test": 114,
+    "train": 513,
+    "val": 103
+   },
+   "hard": {
+    "test": 36,
+    "train": 157,
+    "val": 29
+   }
+  },
+  "near_duplicate_original_pairs": 15,
+  "near_duplicate_cross_split": [
+   [
+    "RW-CMN-P145557116",
+    "RW-ANK-71d1y7-T",
+    0.54,
+    "val",
+    "train"
+   ],
+   [
+    "RW-ANK-95w389-T",
+    "RW-ANK-72y089-T",
+    0.71,
+    "train",
+    "test"
+   ],
+   [
+    "RW-ANK-9j2l57-T",
+    "RW-ANK-95wygg-T",
+    0.67,
+    "test",
+    "val"
+   ],
+   [
+    "RW-ANK-9j28z7-T",
+    "RW-ANK-9l8zz4-T",
+    0.79,
+    "test",
+    "train"
+   ],
+   [
+    "RW-ANK-72y089-T",
+    "RW-ANK-4wg2e7-T",
+    0.75,
+    "test",
+    "train"
+   ],
+   [
+    "RW-ANK-72y089-T",
+    "RW-ANK-71d1y7-T",
+    0.67,
+    "test",
+    "train"
+   ],
+   [
+    "RW-ANK-72y089-T",
+    "RW-ANK-4vgk14-T",
+    0.71,
+    "test",
+    "train"
+   ],
+   [
+    "RW-ANK-7p8md4-T",
+    "RW-ANK-71d1y7-T",
+    0.88,
+    "test",
+    "train"
+   ],
+   [
+    "RW-ANK-400wx4-T",
+    "RW-ANK-95wygg-T",
+    1.0,
+    "train",
+    "val"
+   ]
+  ],
+  "near_duplicate_cross_split_count": 9,
+  "originals_compared": 305,
+  "class_by_split": {
+   "audio_source_only_not_visual_derivation": {
+    "excluded": 21,
+    "test": 0,
+    "train": 32,
+    "val": 2
+   },
+   "direct_derivation": {
+    "excluded": 183,
+    "test": 143,
+    "train": 673,
+    "val": 132
+   },
+   "edited_version": {
+    "excluded": 0,
+    "test": 36,
+    "train": 175,
+    "val": 39
+   },
+   "indirect_derivation": {
+    "excluded": 0,
+    "test": 63,
+    "train": 360,
+    "val": 72
+   },
+   "same_family_other": {
+    "excluded": 1281,
+    "test": 735,
+    "train": 3191,
+    "val": 620
+   },
+   "sibling_same_parent": {
+    "excluded": 2056,
+    "test": 594,
+    "train": 1777,
+    "val": 332
+   },
+   "unrelated_distinct_source": {
+    "excluded": 190,
+    "test": 150,
+    "train": 670,
+    "val": 132
+   }
+  },
+  "variants_by_split": {
+   "train": 826,
+   "val": 162,
+   "test": 143
+  },
+  "trainable": 673
+ },
+ "media_quality": {
+  "anakin_edited": {
+   "files": 250,
+   "readable": 250,
+   "hours": 0.47,
+   "dur_min": 2.0,
+   "dur_median": 5.0,
+   "dur_max": 29.4,
+   "audio_share": 0.972,
+   "heights": {
+    "720": 69,
+    "360": 54,
+    "540": 49,
+    "1080": 25,
+    "480": 18,
+    "640": 9
+   },
+   "fps": {
+    "30": 165,
+    "25": 44,
+    "24": 34,
+    "15": 5,
+    "50": 1
+   },
+   "unreadable": []
+  },
+  "anakin_trimmed": {
+   "files": 250,
+   "readable": 250,
+   "hours": 0.47,
+   "dur_min": 2.0,
+   "dur_median": 5.0,
+   "dur_max": 59.2,
+   "audio_share": 0.976,
+   "heights": {
+    "720": 72,
+    "360": 60,
+    "540": 52,
+    "480": 18,
+    "1080": 12,
+    "640": 9
+   },
+   "fps": {
+    "30": 165,
+    "25": 44,
+    "24": 34,
+    "15": 2,
+    "17": 2
+   },
+   "unreadable": []
+  },
+  "commons_originals": {
+   "files": 96,
+   "readable": 95,
+   "hours": 13.46,
+   "dur_min": 0.0,
+   "dur_median": 41.2,
+   "dur_max": 36061.7,
+   "audio_share": 0.823,
+   "heights": {
+    "1080": 31,
+    "720": 15,
+    "480": 11,
+    "2160": 7,
+    "360": 6,
+    "1920": 5
+   },
+   "fps": {
+    "30": 43,
+    "25": 20,
+    "0": 11,
+    "24": 9,
+    "60": 4
+   },
+   "unreadable": [
+    "data/real_world/media/commons/RW-CMN-P89310222.webm"
+   ]
+  },
+  "controlled_variants": {
+   "files": 1132,
+   "readable": 1132,
+   "hours": 11.32,
+   "dur_min": 4.8,
+   "dur_median": 27.1,
+   "dur_max": 116.6,
+   "audio_share": 0.797,
+   "heights": {
+    "1080": 252,
+    "360": 246,
+    "720": 100,
+    "2160": 83,
+    "576": 63,
+    "864": 60
+   },
+   "fps": {
+    "30": 571,
+    "25": 238,
+    "24": 173,
+    "10": 36,
+    "3": 22
+   },
+   "unreadable": []
+  }
+ },
+ "commons": {
+  "files": 96,
+  "usable": 55,
+  "qc_flags": {
+   "too_long(>120s)": 25,
+   "no_audio": 17,
+   "too_short(<8s)": 8,
+   "duplicate": 4,
+   "non_real_world_synthetic_or_cgi": 4,
+   "mostly_black": 1,
+   "decode_errors": 1
+  },
+  "licences": {
+   "CC BY-SA 4.0": 35,
+   "Public domain": 25,
+   "CC BY 4.0": 12,
+   "CC BY-SA 3.0": 8,
+   "CC BY 3.0": 7,
+   "CC0": 6,
+   "CC BY 2.0": 1,
+   "CC BY-SA 2.0": 1,
+   "CC BY-SA 3.0 nl": 1
+  },
+  "no_audio_usable": 11,
+  "by_theme": {},
+  "usable_by_theme": {
+   "sports": 4,
+   "nature": 4,
+   "protest": 3,
+   "street": 3,
+   "traffic": 3,
+   "market": 3,
+   "animals": 3,
+   "music": 3,
+   "festival": 3,
+   "science": 3,
+   "transport": 3,
+   "workshop": 3,
+   "education": 3,
+   "ceremony": 3,
+   "news": 2,
+   "wildlife": 2,
+   "cooking": 2,
+   "city": 2,
+   "speech": 1,
+   "interview": 1,
+   "space": 1
+  },
+  "missing_author": 2,
+  "missing_license_url": 25
+ },
+ "fvc2018": {
+  "heads": 380,
+  "dup_rows": 5199,
+  "total_rows": 5579,
+  "file_fake": 2920,
+  "file_real": 2164,
+  "record_claims": {
+   "fake": 3957,
+   "real": 2458
+  },
+  "dup_rows_distinct_urls": 5192,
+  "journal_claim_near_duplicates": 5195,
+  "label_values": {
+   "fake": 2920,
+   "real": 2164,
+   "uncertain": 340,
+   "debunked": 89,
+   "parody": 66
+  },
+  "rows_normalised_to_not_assessed": 495,
+  "text_queries_file": {
+   "rows": 380,
+   "header_fields": 8,
+   "max_fields": 21,
+   "ragged_rows": 62,
+   "read_by_orvex_code": false
+  }
+ },
+ "fivr_norm": {
+  "unnormalised_IS_edges": 3543,
+  "dangling_edges": 61,
+  "by_label": {
+   "DS": 5839,
+   "IS": 3543,
+   "CS": 1855,
+   "ND": 1327
+  }
+ },
+ "anakin_sources": {
+  "selected": 250,
+  "distinct_urls": 250,
+  "metadata_rows": 1023,
+  "metadata_distinct_urls": 1013
+ },
+ "anakin": {
+  "official_edited_files": 1042,
+  "metadata_rows": 1023,
+  "files_without_metadata": 19,
+  "metadata_without_files": 0,
+  "selected_pairs": 250,
+  "types": {
+   "swap": 272,
+   "splicing": 228,
+   "inpainting": 190,
+   "frame-level": 172,
+   "audio": 161
+  },
+  "mask_files_local": 89,
+  "mask_bytes": 128979239,
+  "masks_referenced_by_code": [
+   "scripts/datasets/candidates.py:19",
+   "scripts/datasets/candidates.py:22",
+   "scripts/datasets/candidates.py:24",
+   "scripts/datasets/s2_collect_media.py:4",
+   "scripts/datasets/s2_collect_media.py:87",
+   "scripts/datasets/s2_collect_media.py:95"
+  ]
+ },
+ "vcsl": {
+  "videos": 9207,
+  "label_pairs": 166146,
+  "segments": 278885,
+  "label_ids_not_in_url_list": 0,
+  "pair_file_rows": {
+   "train": 97033,
+   "val": 41798,
+   "test": 54630
+  },
+  "pair_ids_not_in_url_list": 4568,
+  "hosts": {
+   "www.bilibili.com": 7653,
+   "www.youtube.com": 1554
+  }
+ },
+ "fivr": {
+  "ids": 225960,
+  "queries": 100,
+  "labels": {
+   "ND": 1327,
+   "DS": 5839,
+   "CS": 1855,
+   "IS": 3543
+  },
+  "query_ids_not_in_ids": 0,
+  "candidate_ids_not_in_ids": 59,
+  "events": 4687,
+  "event_keys": [
+   "date",
+   "headline",
+   "href",
+   "text",
+   "topic",
+   "youtube"
+  ]
+ },
+ "covid": {
+  "rows": 8122,
+  "publish_ts": 881,
+  "channel": 935,
+  "removal_ts": 420,
+  "dup_urls": 18,
+  "twitter_ids": 257326,
+  "facebook_ids": 81159,
+  "tweets_unverified_time": 2236,
+  "sharer_accounts": 0,
+  "pub_ts_range": [
+   "2015-02-03 0:00:00",
+   "2020-06-30 0:00:00"
+  ]
+ },
+ "overlap": [
+  {
+   "dataset_a": "RW-03",
+   "dataset_b": "RW-04",
+   "ids_a": 3369,
+   "ids_b": 227,
+   "shared_youtube_ids": 188
+  },
+  {
+   "dataset_a": "RW-03",
+   "dataset_b": "RW-05",
+   "ids_a": 3369,
+   "ids_b": 59,
+   "shared_youtube_ids": 49
+  },
+  {
+   "dataset_a": "RW-03",
+   "dataset_b": "RW-06",
+   "ids_a": 3369,
+   "ids_b": 225960,
+   "shared_youtube_ids": 112
+  },
+  {
+   "dataset_a": "RW-03",
+   "dataset_b": "RW-07",
+   "ids_a": 3369,
+   "ids_b": 1554,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-03",
+   "dataset_b": "RW-31",
+   "ids_a": 3369,
+   "ids_b": 8104,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-04",
+   "dataset_b": "RW-05",
+   "ids_a": 227,
+   "ids_b": 59,
+   "shared_youtube_ids": 56
+  },
+  {
+   "dataset_a": "RW-04",
+   "dataset_b": "RW-06",
+   "ids_a": 227,
+   "ids_b": 225960,
+   "shared_youtube_ids": 13
+  },
+  {
+   "dataset_a": "RW-04",
+   "dataset_b": "RW-07",
+   "ids_a": 227,
+   "ids_b": 1554,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-04",
+   "dataset_b": "RW-31",
+   "ids_a": 227,
+   "ids_b": 8104,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-05",
+   "dataset_b": "RW-06",
+   "ids_a": 59,
+   "ids_b": 225960,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-05",
+   "dataset_b": "RW-07",
+   "ids_a": 59,
+   "ids_b": 1554,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-05",
+   "dataset_b": "RW-31",
+   "ids_a": 59,
+   "ids_b": 8104,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-06",
+   "dataset_b": "RW-07",
+   "ids_a": 225960,
+   "ids_b": 1554,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-06",
+   "dataset_b": "RW-31",
+   "ids_a": 225960,
+   "ids_b": 8104,
+   "shared_youtube_ids": 0
+  },
+  {
+   "dataset_a": "RW-07",
+   "dataset_b": "RW-31",
+   "ids_a": 1554,
+   "ids_b": 8104,
+   "shared_youtube_ids": 0
+  }
+ ],
+ "media_hash_duplicates": {
+  "media_files_hashed": 1728,
+  "duplicate_hash_groups": 0,
+  "files_in_duplicate_groups": 0
+ },
+ "storage": {
+  "data_bytes": 17241741313,
+  "repo_bytes": 17927214201,
+  "cap_bytes": 30000000000,
+  "remaining_to_cap": 12758258687,
+  "by_dataset": {
+   "DS-001": 1687143702,
+   "DS-002": 139714,
+   "DS-003": 2392113142,
+   "DS-004": 128979239,
+   "DS-005": 1033853,
+   "DS-006": 650024,
+   "DS-007": 74758,
+   "DS-008": 27904,
+   "DS-009": 17873355,
+   "DS-010": 42201384,
+   "DS-011": 4198098,
+   "DS-012": 61057,
+   "DS-013": 12500690021,
+   "DS-014": 1094515,
+   "DS-015": 954337,
+   "DS-016": 148756771,
+   "DS-017": 149867390,
+   "DS-018": 110755040,
+   "DS-019": 670524,
+   "DS-020": 2252894,
+   "DS-021": 1133311,
+   "DS-022": 216956,
+   "DS-023": 4719493,
+   "DS-024": 37349,
+   "DS-025": 72085,
+   "DS-026": 78429,
+   "DS-027": 23226,
+   "DS-028": 215252,
+   "DS-029": 219,
+   "DS-030": 3979,
+   "DS-031": 41965067,
+   "DS-032": 3706024,
+   "DS-033": 32201,
+   "DS-034": 412378,
+   "DS-035": 240494329,
+   "DS-036": 251692,
+   "DS-037": 20779,
+   "DS-038": 443989875,
+   "DS-039": 303686,
+   "DS-040": 149
+  },
+  "archives_zip_bytes": 6023814,
+  "extracted_copies_bytes": 12602227,
+  "donor_wav_cache_bytes": 78,
+  "symlinks": 0,
+  "media_bytes": {
+   "commons": 1687143702,
+   "anakin": 2521092381,
+   "variants": 12500690021
+  },
+  "definition": "decimal bytes of all files under <repo>\\data; excludes tools/, ORVEX_Literature/, docs/, scripts/, tests/ and model weights (none exist); no symlinks followed (none found)"
+ },
+ "layer_a_read_only": {
+  "read_only": 729,
+  "writable": 0
+ },
+ "claim_no_file_kept_for_failed": true,
+ "claims": [
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "training pairs (total)",
+   "claimed": 13659.0,
+   "actual": 13659,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "group examples",
+   "claimed": "claim text not found",
+   "actual": 110,
+   "match": null
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "dataset payload GB",
+   "claimed": 17.24,
+   "actual": 17.241741313,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "trainable variants",
+   "claimed": 673.0,
+   "actual": 673,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "media master rows",
+   "claimed": 252270.0,
+   "actual": 252270,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "platform observation rows",
+   "claimed": 352702.0,
+   "actual": 352702,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "evidence ledger rows",
+   "claimed": 1237.0,
+   "actual": 1237,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_10_2_10_3_10_4_COMPLETION_REPORT.md",
+   "claim": "failed variants",
+   "claimed": 2.0,
+   "actual": 2,
+   "match": true
+  },
+  {
+   "doc": "ORVEX_DATASET_QA_REPORT.md",
+   "claim": "QA report failed variants",
+   "claimed": 2.0,
+   "actual": 2,
+   "match": true
+  }
+ ],
+ "stray_files": [
+  ".gitignore",
+  "nul"
+ ],
+ "nul_size": 0,
+ "no_git": true,
+ "no_app_code": true,
+ "model_artifacts": 0,
+ "patch_scripts": [
+  "patch_round2.py",
+  "patch_round3.py",
+  "patch_round4.py",
+  "patch_round5.py",
+  "patch_round6.py",
+  "update_report.py",
+  "update_report2.py"
+ ]
+}

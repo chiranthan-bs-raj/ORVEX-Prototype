@@ -1,0 +1,138 @@
+{
+ "K01_schema_columns": {
+  "ok": true,
+  "evidence": "15 tables, 306 contract columns; mismatches: none"
+ },
+ "K02_required_nonnull": {
+  "ok": true,
+  "evidence": "non-nullable columns with blanks: none"
+ },
+ "K03_unique_ids": {
+  "ok": true,
+  "evidence": "duplicate media_id=0, variant ids=0, relationship ids=0, overlap natural/variant ids=0; media=252270, variants=1133, edges=299875"
+ },
+ "K04_variant_lineage": {
+  "ok": true,
+  "evidence": "1131 passed variants; chains not ending in an eligible real-world root / invalid audio or caption provenance: 0"
+ },
+ "K05_separation": {
+  "ok": true,
+  "evidence": "separation violations: 0; controlled files on disk: 1132"
+ },
+ "K06_hashes": {
+  "ok": true,
+  "evidence": "1727 local media files re-hashed; missing or hash mismatch: 0"
+ },
+ "K07_metadata_only_clean": {
+  "ok": true,
+  "evidence": "251674 metadata_only records; with a local path/hash (would be a false 'downloaded' claim): 0"
+ },
+ "K08_licence_gate": {
+  "ok": true,
+  "evidence": "96 downloaded Commons files; licences: {'CC BY-SA 4.0': 35, 'Public domain': 25, 'CC BY 4.0': 12, 'CC BY-SA 3.0': 8, 'CC BY 3.0': 7, 'CC0': 6, 'CC BY 2.0': 1, 'CC BY-SA 2.0': 1, 'CC BY-SA 3.0 nl': 1}; outside allowed set: 0"
+ },
+ "K09_real_world_only": {
+  "ok": true,
+  "evidence": "variant tools={'ffmpeg'}; sources used for variants={'RW-01'}; catalogue contains only FFmpeg filters (no generative models, no TTS)"
+ },
+ "K10_transform_coverage": {
+  "ok": true,
+  "evidence": "passed by transformation={'recompress_low': 220, 'watermark_overlay': 165, 'crop_center': 110, 'caption_burn_in': 110, 'reencode_hq': 55, 'trim_middle': 55, 'trim_head': 55, 'trim_tail': 55, 'audio_replace': 55, 'mirror_color_shift': 55, 'speed_change': 55, 'reupload_sim': 55, 'audio_noise_mix': 44, 'audio_mute': 42}; multi-step (depth>=2) variants=385; failed=2"
+ },
+ "K11_controlled_edges": {
+  "ok": true,
+  "evidence": "controlled lineage edges=1131 for 1131 passed variants; variants without an edge: 0"
+ },
+ "K12_native_edges_preserved": {
+  "ok": true,
+  "evidence": "native edges by dataset={'RW-07': 278885, 'RW-06': 12564, 'RW-03': 5199, 'RW-02': 1997}; distinct native labels kept=16"
+ },
+ "K13_split_leakage": {
+  "ok": true,
+  "evidence": "9928 model pairs checked across 305 families; pairs/variants whose members are not wholly inside one split: 0; splits={'train': 215, 'val': 47, 'test': 43}"
+ },
+ "K14_heldout_policy": {
+  "ok": true,
+  "evidence": "held-out transformation types ['T11', 'T12', 'T13', 'T14']; training/validation uses of held-out lineage: 0; test pairs with held-out lineage: 525"
+ },
+ "K15_pair_labels": {
+  "ok": true,
+  "evidence": "13659 pairs; class counts={'same_family_other': 5827, 'sibling_same_parent': 4759, 'unrelated_distinct_source': 1142, 'direct_derivation': 1131, 'indirect_derivation': 495, 'edited_version': 250, 'audio_source_only_not_visual_derivation': 55}; label inconsistencies=0"
+ },
+ "K16_budget": {
+  "ok": true,
+  "evidence": "dataset payload (everything under data/) = 17241740608 bytes = 17.24 GB (decimal) = 16.06 GiB; cap 30 GB, target <=27 GB"
+ },
+ "K17_features": {
+  "ok": true,
+  "evidence": "visual dHash computed for 1726 of 1727 local media (failures ['RW-CMN-P89310222']; all are QC-flagged unusable files excluded from variants: True); NOT computed, no placeholder files: ['visual_embedding', 'audio_embedding', 'ocr_text', 'asr_transcript', 'text_embedding', 'scene_boundaries']"
+ },
+ "K18_native_files_intact": {
+  "ok": true,
+  "evidence": "4 official archives re-verified against Zenodo md5; failures: none"
+ },
+ "K19_duplicates": {
+  "ok": true,
+  "evidence": "378 duplicate records mapped {'same_url_across_versions': 237, 'same_platform_id_across_sources': 119, 'same_url_within_source': 18, 'near_duplicate_perceptual': 4}; dangling ids: 0"
+ },
+ "K20_campaign_honesty": {
+  "ok": true,
+  "evidence": "campaign clusters=0 (blocked: no multi-account time-stamped distribution evidence); observations with accounts=1031, with publish time=258303, total=352702"
+ },
+ "K21_policy_present": {
+  "ok": true,
+  "evidence": "policy file present, 1711 words; missing sections: none"
+ },
+ "K22_access_log": {
+  "ok": true,
+  "evidence": "729 logged attempts: ok=724, failed=2, policy-skipped=3; downloaded media files=596"
+ },
+ "K23_media_playable": {
+  "ok": true,
+  "evidence": "596 downloaded real media probed; flagged unplayable: 2 (kept in master, excluded from variants)"
+ },
+ "K24_registry": {
+  "ok": true,
+  "evidence": "31 candidates; statuses={'research_lead_unverified': 9, 'excluded_not_real_world_for_scope': 6, 'included_metadata_only': 5, 'excluded_duplicate_version': 3, 'excluded_license': 3, 'included_selected_subset': 2, 'excluded_inaccessible': 2, 'legal_review_required': 1}; flagged unverified research leads=15; invalid statuses=0"
+ },
+ "K25_groups": {
+  "ok": true,
+  "evidence": "110 groups of 5-6 videos; truth edges total=85"
+ },
+ "K26_failed_not_trained": {
+  "ok": true,
+  "evidence": "failed variants=2; failed variants marked trainable or retained as files: 0"
+ },
+ "K27_label_dimensions_separate": {
+  "ok": true,
+  "evidence": "authenticity/misleading labels live only in the media master (edges carry relation labels only); FVC records with an invented authenticity status: 0; issues: none"
+ },
+ "K28_no_zero_byte_or_truncated": {
+  "ok": true,
+  "evidence": "zero-byte files: 0; downloaded media with duration 0/unknown: ['RW-CMN-P89310222'] (all QC-excluded from variants: True)"
+ },
+ "K29_attribution_complete": {
+  "ok": true,
+  "evidence": "96 attribution rows for 96 downloaded Commons files; rows missing licence/licence URL/file page: 0; author not stated on Commons (uploader link only): 2"
+ },
+ "K30_manifests_present": {
+  "ok": true,
+  "evidence": "manifests present (8); checksum lines=1883 vs files on disk 1883; crosswalk rows=252270 vs media master 252270"
+ },
+ "K31_label_dimensions": {
+  "ok": true,
+  "evidence": "coordination_status=not_assessed on 252270 media and 352702 observations; evidence_status values on edges: {'source_annotation': 298645, 'controlled_transformation_log': 1230}"
+ },
+ "K32_covid_dataset": {
+  "ok": true,
+  "evidence": "RW-31 records=8122 (all metadata_only, bad=0); tweet share-references with derived time=257326; 2236 fall outside the dataset's stated Nov 2019-Jun 2020 window and are flagged second_derived_unverified (unflagged: 0); facebook share refs=83222"
+ },
+ "K33_layer_a_read_only": {
+  "ok": true,
+  "evidence": "729 Layer A files (media + raw metadata); still writable: 0"
+ },
+ "K34_gitignore": {
+  "ok": true,
+  "evidence": ".gitignore excludes data/, tools/, secrets (no git repository exists yet)"
+ }
+}

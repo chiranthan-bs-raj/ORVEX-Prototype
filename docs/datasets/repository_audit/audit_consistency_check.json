@@ -1,0 +1,95 @@
+{
+ "checks": [
+  {
+   "check": "inventory rows == summary audit ids",
+   "value_a": 40,
+   "value_b": 40,
+   "consistent": true
+  },
+  {
+   "check": "necessity rows == inventory rows",
+   "value_a": 40,
+   "value_b": 40,
+   "consistent": true
+  },
+  {
+   "check": "licensing rows == inventory rows",
+   "value_a": 40,
+   "value_b": 40,
+   "consistent": true
+  },
+  {
+   "check": "column dictionary rows == summary",
+   "value_a": 1269,
+   "value_b": 1269,
+   "consistent": true
+  },
+  {
+   "check": "lineage rows == summary",
+   "value_a": 1151,
+   "value_b": 1151,
+   "consistent": true
+  },
+  {
+   "check": "usage rows == summary",
+   "value_a": 227,
+   "value_b": 227,
+   "consistent": true
+  },
+  {
+   "check": "requirement rows == summary",
+   "value_a": 34,
+   "value_b": 34,
+   "consistent": true
+  },
+  {
+   "check": "findings rows == summary",
+   "value_a": 24,
+   "value_b": 24,
+   "consistent": true
+  },
+  {
+   "check": "summary dataset list length == inventory",
+   "value_a": 40,
+   "value_b": 40,
+   "consistent": true
+  },
+  {
+   "check": "sum of inventory bytes == repository bytes (excl. audit folder)",
+   "value_a": 17927214201,
+   "value_b": 17927214201,
+   "consistent": true
+  },
+  {
+   "check": "storage report data bytes == summary",
+   "value_a": 17241741313,
+   "value_b": 17241741313,
+   "consistent": true
+  },
+  {
+   "check": "variants: summary passed == facts",
+   "value_a": 1131,
+   "value_b": 1131,
+   "consistent": true
+  },
+  {
+   "check": "pairs_total (summary) == training_pairs rows",
+   "value_a": 13659,
+   "value_b": 13659,
+   "consistent": true
+  },
+  {
+   "check": "every inventory id has a necessity row",
+   "value_a": "{'DS-002', 'DS-027', 'DS-035', 'DS-022', 'DS-010', 'DS-008', 'DS-036', 'DS-037', 'DS-038', 'DS-020', 'DS-028', 'DS-007', 'DS-017', 'DS-033', 'DS-034', 'DS-012', 'DS-015', 'DS-009', 'DS-029', 'DS-001', 'DS-004', 'DS-018', 'DS-030', 'DS-024', 'DS-026', 'DS-031', 'DS-003', 'DS-032', 'DS-006', 'DS-039', 'DS-013', 'DS-016', 'DS-011', 'DS-023', 'DS-005', 'DS-021', 'DS-040', 'DS-025', 'DS-019', 'DS-014'}",
+   "value_b": "{'DS-002', 'DS-027', 'DS-035', 'DS-022', 'DS-010', 'DS-008', 'DS-036', 'DS-037', 'DS-038', 'DS-020', 'DS-028', 'DS-007', 'DS-017', 'DS-033', 'DS-034', 'DS-012', 'DS-015', 'DS-009', 'DS-029', 'DS-001', 'DS-004', 'DS-018', 'DS-030', 'DS-024', 'DS-026', 'DS-031', 'DS-003', 'DS-032', 'DS-006', 'DS-039', 'DS-013', 'DS-016', 'DS-011', 'DS-023', 'DS-005', 'DS-021', 'DS-040', 'DS-025', 'DS-019', 'DS-014'}",
+   "consistent": true
+  },
+  {
+   "check": "JSON summary valid and loadable",
+   "value_a": true,
+   "value_b": true,
+   "consistent": true
+  }
+ ],
+ "all_consistent": true
+}

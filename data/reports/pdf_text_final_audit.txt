@@ -1,0 +1,453 @@
+1
+ORVEX
+Origin and Relationship Verification Explorer
+Project tagline: Trace the Origin. Reveal the Connections.
+Project title: AI System for Detecting Deepfake Campaigns and Coordinated Manipulation
+Project category: Artificial Intelligence, Machine Learning, Digital Forensics, Media Integrity, and 
+Trust and Safety
+1. Problem Statement
+Today, AI can create fake videos, fake audio, images, and other types of misleading content. However, 
+the problem is not limited to creating one fake video. The same video can be edited in many ways and 
+spread across different social media platforms.
+For example, someone creates or obtains a video and then makes several versions of it:
+ One person trims the video.
+ Another person changes its audio.
+ Another person adds misleading captions.
+ Another person combines the video with AI-generated audio.
+ Another person creates new versions from an already manipulated video.
+ These versions are shared through different accounts and social media platforms.
+All these videos may look different, even though they are connected to the same original video or to 
+one another.
+Traditional deepfake detection mainly focuses on deciding whether an individual piece of media is real 
+or AI-generated. Such detection does not necessarily reveal the complete relationship between different 
+versions or explain how they are connected.
+Forensic investigators may need to find these videos one by one, compare them manually, and 
+determine where they came from. This takes time and makes it difficult to understand how the content 
+has spread.
+The main problem is the lack of an effective, unified system that can identify relationships 
+between original and manipulated media, trace their possible origins, and help investigators 
+discover connected manipulation campaigns across supported online platforms.
+ORVEX aims to solve this problem by using AI and machine learning to discover media relationships, 
+build connection graphs, identify possible manipulation methods, and support the investigation of 
+coordinated campaigns.
+2. What We Are Building
+We are building ORVEX — Origin and Relationship Verification Explorer, an AI-powered platform 
+that helps users investigate related videos and other media.
+Instead of only predicting whether a video is real or fake, ORVEX will focus on finding connections 
+between media items.
+2
+For example, when a user uploads one reference video, the system should be able to:
+1. Analyze the uploaded video.
+2. Search supported data sources for related content.
+3. Find videos that may be derived from the reference video.
+4. Identify possible changes such as trimming, audio replacement, or caption addition.
+5. Discover connections between the reference video and other versions.
+6. Build a graph showing the relationships.
+7. Show where the content was found and when it was observed, when this information is available.
+8. Help investigators understand how the related content may have spread.
+The project will be developed in two main phases.
+Phase 1 — Relationship Learning: Create a controlled dataset from real source videos, generate 
+manipulated versions, record their relationships, and train a machine learning model to identify 
+connections.
+Phase 2 — Relationship Discovery: Accept a reference video, search supported platforms or datasets, 
+find related media, and build a graph showing the likely connections.
+Both phases will contribute to one final product: ORVEX.
+3. Target Users
+3.1 Digital Forensic Investigators
+They can use ORVEX to compare media, trace possible origins, organize evidence, and reduce the time 
+spent investigating individual videos.
+3.2 Social Media Trust and Safety Teams
+They can use the system to investigate related posts, identify suspicious distribution patterns, and 
+prioritize content for human review.
+3.3 Journalists and Fact-Checkers
+They can use ORVEX to compare different versions of a video and investigate changes that may alter its 
+meaning.
+3.4 Researchers
+AI and machine learning researchers can use the system to study media relationships, deepfake 
+detection, manipulation methods, and campaign detection.
+3.5 Cybercrime Investigation Teams
+Where legally authorized, investigators can use the system to organize digital evidence and examine 
+connections between media, posts, accounts, and timelines.
+ORVEX will support investigations. It will not automatically declare a person guilty or label an account 
+malicious simply because it shares related content.
+3
+4. Existing Problems and Gaps
+The project addresses the following problems.
+4.1 Individual Video Detection
+A conventional detector may classify a video as real or fake, but that result alone does not explain 
+where the video came from or which other videos are connected to it.
+4.2 Manual Investigation
+Investigators may need to inspect many videos separately. This makes it difficult to identify all the 
+related versions efficiently.
+4.3 Manipulated Versions Look Different
+Trimming, cropping, compression, audio replacement, captions, and other changes can make related 
+videos look different.
+4.4 Missing Relationship Information
+A dataset may contain real and fake labels without recording the relationships between original media 
+and manipulated versions.
+4.5 Platform Limitations
+Different social media platforms have different APIs, permissions, and search capabilities. Finding all 
+versions of a video across the internet is not always possible.
+4.6 Missing Campaign-Level Analysis
+Finding related media does not automatically reveal whether multiple accounts are coordinating their 
+activities. Media relationships and account coordination must be analyzed separately.
+4.7 New Manipulation Methods
+A model trained on known transformations may fail when it encounters unfamiliar editing methods or 
+newly developed AI generation techniques.
+ORVEX will address these gaps through relationship learning, provenance tracking, graph analysis, 
+cross-modal analysis, and robustness testing.
+5. Proposed Solution
+The proposed solution is divided into two phases.
+Phase 1: Dataset Creation and Model Training
+The first phase will create a new dataset containing original videos and manipulated versions with 
+known relationships.
+The starting point will be real source videos. These videos will be used to generate controlled variants.
+For example, one source video may produce:
+4
+ Variant A: Trimmed video.
+ Variant B: Video with misleading captions.
+ Variant C: Video with replaced audio.
+ Variant D: Recompressed video.
+ Variant E: A new edit derived from Variant A.
+Every video will have a unique ID. Each manipulated version will have a parent ID, transformation 
+label, and relationship record.
+The model will learn to recognize these relationships.
+Phase 2: Reference Video Investigation
+After the model has been trained and evaluated, the user will upload a reference video.
+ORVEX will search the available sources, collect candidate videos, compare them, identify likely 
+relationships, and create a graph.
+For example, if the system finds ten related videos, it should explain which ones are likely direct 
+derivatives of the reference, which ones may have come from other variants, and which relationships 
+remain uncertain.
+The system will also connect available post information, account identifiers, platforms, and timestamps 
+to help investigate possible campaigns.
+Important: Finding similar videos is not the same as proving that one was created from another. The 
+system will use confidence scores and supporting evidence, and uncertain relationships will be marked 
+for review.
+6. Features and Modules
+Module 1: Dataset Creation
+ Import source videos.
+ Identify duplicate files.
+ Assign unique IDs to original videos.
+ Generate controlled manipulated variants.
+ Record transformation types and parent IDs.
+ Save the known relationships between media items.
+Module 2: Media Processing
+ Extract video frames.
+ Extract audio.
+ Extract available text and captions.
+ Use OCR to read text inside images and video frames.
+ Generate visual, audio, and text representations.
+ Store useful fingerprints and extracted features.
+Module 3: Relationship Detection
+ Compare two videos or media items.
+5
+ Compare a group of five or six videos.
+ Estimate whether two items share a source.
+ Identify possible direct and indirect derivation.
+ Separate likely matches from uncertain matches.
+ Return confidence scores and supporting evidence.
+Module 4: Manipulation Analysis
+ Identify possible trimming and cropping.
+ Detect changes in captions and visible text.
+ Compare audio tracks.
+ Detect possible audio replacement.
+ Examine visual and audio inconsistencies.
+ Support separate AI-generated media detection models where suitable training data is available.
+Module 5: Relationship Graph
+ Represent each media item as a node.
+ Represent relationships as edges.
+ Show the original video and its variants.
+ Show likely parent-child relationships.
+ Display the possible manipulation type for each connection.
+ Support graph search and filtering.
+Module 6: Platform Integration
+ Connect to one or two selected platforms first.
+ Use permitted APIs or authorized data sources.
+ Search for accessible candidate posts.
+ Retrieve available post IDs, URLs, timestamps, and metadata.
+ Normalize the results into a common format.
+ Handle rate limits and unavailable content.
+Module 7: Campaign Detection
+ Group related posts and media into candidate clusters.
+ Analyze posting times and available account information.
+ Examine cross-posting and repeated distribution patterns.
+ Identify possible coordination signals.
+ Keep media similarity separate from evidence of coordinated behavior.
+Module 8: Investigation Dashboard
+ Upload a reference video.
+ Start an investigation.
+ View related media.
+ Compare the reference with discovered variants.
+ Explore the relationship graph.
+ View manipulation evidence and confidence scores.
+6
+ Inspect source links and timestamps when available.
+ Export an investigation report.
+Module 9: Model Evaluation
+ Measure relationship detection precision and recall.
+ Measure false positives.
+ Evaluate graph and cluster quality.
+ Test unseen manipulation methods.
+ Measure time-to-detection.
+ Record model versions and experiment results.
+7. End-to-End Workflow
+Phase 1: Training Workflow
+Step 1 — Collect original videos
+Collect a suitable set of real source videos from authorized datasets or other permitted sources.
+Step 2 — Check duplicates
+Identify repeated files and determine which videos represent unique source content.
+Step 3 — Generate manipulated variants
+Create controlled versions through trimming, cropping, caption addition, audio replacement, 
+recompression, and other selected transformations.
+Step 4 — Record relationships
+Store the source ID, parent ID, transformation type, and relationship between every original and 
+manipulated version.
+Step 5 — Extract features
+Process the media to obtain useful visual, audio, and textual information.
+Step 6 — Train the model
+Train a relationship model to distinguish related media from unrelated media and, where the labels 
+support it, predict relationship types.
+Step 7 — Test the model
+Evaluate it using source videos and transformations that were not used during training.
+Step 8 — Build the graph
+Use the predicted relationships to construct a graph and compare it against the known ground-truth 
+graph.
+Phase 2: Investigation Workflow
+Step 1 — Upload a reference video
+The user selects a video that needs investigation.
+Step 2 — Analyze the reference
+7
+ORVEX extracts the required features and creates a searchable representation.
+Step 3 — Search for related media
+The system searches supported platforms, authorized sources, and available datasets.
+Step 4 — Collect candidate videos
+The system gathers accessible candidate videos and their available metadata.
+Step 5 — Compare the videos
+The trained model compares the reference with the candidates and also compares candidate items with 
+one another.
+Step 6 — Predict relationships
+The system estimates direct relationships, shared-source relationships, and possible chains of 
+derivation.
+Step 7 — Analyze possible manipulation
+The system identifies evidence of changes such as trimming, caption addition, or audio replacement 
+where its methods support those conclusions.
+Step 8 — Build the graph
+ORVEX connects media items and adds platform posts, accounts, and timelines where evidence is 
+available.
+Step 9 — Identify candidate campaigns
+The system groups related items and examines available distribution patterns to find possible 
+coordination.
+Step 10 — Display results
+The dashboard presents the graph, candidate relationships, supporting evidence, confidence scores, 
+source information, and uncertain findings.
+8. Technology Stack
+The following is the recommended technology stack for ORVEX. Each tool has a defined role, so the 
+project does not become unnecessarily complicated.
+8.1 Frontend
+ React with TypeScript: Build the web application.
+ Vite: Run the development server and build the frontend.
+ Tailwind CSS: Design the interface.
+ React Flow: Display the media relationship graph.
+ Recharts: Display model evaluation metrics and investigation statistics.
+8.2 Backend
+ Python: Main programming language.
+ FastAPI: Create backend APIs.
+ Pydantic: Validate input and output data.
+8
+ FFmpeg: Process video and audio files.
+ OpenCV: Extract and analyze video frames.
+ Background job processing: Handle lengthy media processing and investigations.
+8.3 AI and Machine Learning
+ PyTorch: Train and run machine learning models.
+ scikit-learn: Build baseline models and evaluate performance.
+ Perceptual hashing: Find exact or near-duplicate visual content.
+ Visual embeddings: Compare frames and video content.
+ Audio embeddings: Compare audio content.
+ Speech transcription: Convert accessible speech into text.
+ OCR: Extract text from video frames.
+ Text embeddings: Compare captions and textual content.
+ Contrastive learning or metric learning: Learn relationships between related and unrelated 
+media.
+The initial model should focus on media relationships. Separate models can be added for AI-generated 
+media detection and manipulation classification.
+8.4 Applied AI and Agent Framework
+Python
+Python will be the main language for AI, machine learning, media processing, and backend 
+development.
+LangChain
+LangChain will be the primary framework for integrating language models with tools and structured 
+workflows.
+LangGraph
+LangGraph will manage multi-step AI workflows, including investigation planning, candidate analysis, 
+evidence gathering, and review stages.
+Agents and Multi-Agent Architecture
+The system may use specialized agents for different tasks:
+9. Investigation Agent: Manages the investigation workflow.
+10. Media Analysis Agent: Coordinates media-processing tools and receives their results.
+11. Relationship Analysis Agent: Organizes relationship predictions from the trained ML models.
+12. Platform Search Agent: Calls the supported platform connectors.
+13. Campaign Analysis Agent: Examines the relationship graph and available distribution 
+information.
+14. Report Agent: Produces a readable investigation report from the collected evidence.
+These agents should use tools and model outputs rather than inventing evidence. Core media matching 
+and relationship scoring should remain in tested, reproducible ML components.
+9
+Tool Use and Function Calling
+Tool use and function calling will let an AI agent request specific actions, such as:
+ Process a video.
+ Search a supported platform.
+ Compare two media items.
+ Retrieve a relationship score.
+ Query the graph.
+ Generate an investigation report.
+Each tool will have a defined input and output format.
+Model Context Protocol (MCP)
+MCP may be used to provide a standard interface between agents and approved external tools or data 
+sources. It is optional for the first prototype and should be introduced only where it simplifies 
+integration.
+Retrieval-Augmented Generation (RAG)
+RAG can retrieve relevant investigation records, media metadata, transformation logs, and supporting 
+evidence before the report is generated.
+RAG will not replace the relationship detection model. It will help the language model retrieve and 
+explain recorded information.
+n8n and Webhooks
+n8n can be self-hosted to coordinate event-based workflows.
+For example:
+ A new investigation is created.
+ A webhook starts a backend job.
+ The backend processes the media.
+ The result is stored.
+ A webhook or workflow updates the investigation status.
+ The report becomes available to the dashboard.
+The core ML pipeline should remain independent of n8n so it can continue to operate if the workflow 
+automation service is unavailable.
+Recommended AI Architecture
+FastAPI will receive requests. LangGraph will coordinate the investigation workflow. LangChain will 
+connect the language model with the required tools. The trained PyTorch models will perform the 
+actual media relationship predictions. The database and graph layer will store the evidence and results.
+8.5 Database and Storage
+ SQLite: Suitable for the first local prototype.
+ PostgreSQL: An option for a larger multi-user system.
+ Neo4j: A recommended graph database option if graph queries become complex.
+ Local file storage: Store authorized source media and generated variants.
+10
+ Vector index: Optional storage for media embeddings and similarity search.
+SQLite and Neo4j do not have to be introduced together from the beginning. The first prototype can use 
+SQLite and graph-oriented relationship tables, with Neo4j added if the project benefits from a dedicated 
+graph database.
+8.6 External APIs
+The first implementation should connect to one or two platforms selected after checking their current 
+API permissions and available search features.
+Possible candidates include Reddit, Telegram, or Instagram, subject to their respective access rules.
+The integration layer should support:
+ Search requests.
+ Available post metadata.
+ Source URLs and post IDs.
+ Timestamps and account identifiers where permitted.
+ Rate-limit handling.
+ Error handling and retries.
+ Source tracking and access monitoring.
+The system must not assume that every platform allows unrestricted video search or downloading.
+8.7 Testing and Deployment
+ Docker: Run services in a repeatable environment.
+ Pytest: Test backend APIs, data processing, and ML functions.
+ Vitest: Test frontend components.
+ Playwright: Test complete user workflows.
+ Experiment tracking: Record datasets, model versions, and evaluation results.
+ Structured logging: Record processing events and errors.
+8.8 Recommended Overall Architecture
+React and TypeScript will provide the interface. FastAPI will manage requests and investigations. 
+LangGraph and LangChain will coordinate agent workflows. Python-based ML components will process 
+media and predict relationships. SQLite or PostgreSQL will store investigation records. Graph storage 
+will represent relationships. Authorized platform connectors will discover accessible candidates. n8n 
+webhooks may coordinate background events.
+9. Novelty and Differentiation
+The main difference between ORVEX and a basic deepfake detector is its focus on relationships.
+9.1 From Individual Detection to Relationship Detection
+Instead of only predicting whether a video is real or fake, ORVEX will investigate how multiple media 
+items may be connected.
+11
+9.2 A Custom Relationship Dataset
+The project will create a dataset containing original videos, manipulated variants, transformation 
+labels, parent IDs, and known relationships.
+This will allow the model to learn from relationship labels instead of relying only on real/fake labels.
+9.3 Graph-Based Investigation
+The system will show media relationships as a graph so investigators can follow likely connections 
+between the original and its variants.
+9.4 Cross-Modal Analysis
+The system will combine visual, audio, and text evidence to identify relationships that may not be 
+obvious from one type of data alone.
+9.5 Campaign-Level Analysis
+ORVEX will combine media provenance with post and timeline information to investigate possible 
+coordinated activity.
+9.6 Robustness Testing
+The model will be evaluated on transformations and source videos that were not used during training.
+The project's novelty must be demonstrated through a literature review and experiments against 
+relevant existing methods. These features are the proposed contributions, not proof that no other 
+system has implemented them.
+12
+10. Pre-Development Roadmap
+A simple, ordered checklist before starting implementation with Claude Code in 
+Antigravity
+Purpose: Complete these preparation steps in order. The goal is to make the project and its data clear 
+before Claude Code begins the main implementation.
+10.1 Research and Feasibility
+ Review existing work on deepfake detection, video similarity, media provenance, and coordinated 
+campaigns.
+ Identify the main gap ORVEX will address.
+ Check what is realistic with available time, hardware, datasets, and platform access.
+Output: Short research summary and feasibility notes.
+10.2 Find and Collect Source Videos
+ Choose permitted datasets or other authorized sources.
+ Check licensing, access conditions, and available metadata.
+ Collect a starter set of unique source videos and preserve the originals.
+Output: Source videos and a simple dataset register.
+10.3 Clean and Label the Dataset
+ Remove exact duplicates and flag unusable videos.
+ Choose the transformations to test, such as trimming, cropping, captions, audio changes, and 
+recompression.
+ Generate variants and record each video's ID, parent ID, and transformation.
+ Prepare related and unrelated examples; split train/test data by original source video.
+Output: A small, labelled dataset with known relationships.
+10.4 Set Data and Evidence Rules
+ Confirm what data can be stored, processed, and reused.
+ Define how ORVEX reports likely, uncertain, and unverified relationships.
+ Keep media similarity separate from claims of coordinated activity.
+Output: Simple data-use and evidence rules.
+10.5 Define the First Version of ORVEX
+ Decide what the first working version must do and what can wait.
+ Describe the user workflow from video upload to graph and report.
+ List the required features and define how success will be measured.
+Output: Scope, workflow, requirements, and success criteria.
+10.6 Confirm Architecture and External Access
+ Decide how the frontend, backend, media processing, ML, storage, and graph will connect.
+ Check API permissions and search capabilities before committing to platform integrations.
+ Choose the simplest suitable storage approach for the first prototype.
+Output: A simple architecture plan and API feasibility notes.
+10.7 Prepare the Repository and Agent Rules
+ Create the repository and basic folders for specs, data, backend, frontend, tests, and docs.
+ Verify Antigravity, Claude Code, Git, Python, FFmpeg, and Node.js are ready.
+13
+ Tell Claude Code to follow approved specs, run tests, report evidence, and not silently change 
+requirements.
+Output: Ready repository and development environment.
+10.8 Finalize Spec-Driven Development
+ Consolidate decisions into the authoritative specs, including the main spec and phase tracker.
+ Check that scope, dataset labels, model inputs/outputs, APIs, evidence rules, and acceptance criteria 
+are clear.
+ Define what evidence is needed before each phase can be marked complete.
+Output: Reviewed specs that act as the single source of truth.
+10.9 Start Implementation
+ Ask Claude Code to read the specs and identify the next approved task.
+ Implement one small task at a time, run the required tests, and review the results.
+ Update phase status only when there is evidence that the acceptance criteria are met.
+Output: Controlled, spec-driven development.
+10.10 Important Notes
+ You can test the dataset pipeline with a small sample first; do not wait until the full dataset is 
+complete to validate the process.
+ Do not assume every social platform allows unrestricted video search or downloading.
+ Draft decisions as you go, then review and finalize the authoritative specs before starting the main 
+implementation.
+ The specs are the source of truth; phase status should be updated only when the required work and 
+tests are supported by evidence.

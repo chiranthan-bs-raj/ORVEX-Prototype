@@ -1,0 +1,163 @@
+variants 1133 passed 1131 edges 299875 features 5187 pairs 13659 groups 110 families 305 access rows 729 payload 17241424204
+[ogg @ 000001da84bcb240] read_timestamp() failed in the middle
+[ogg @ 000001da84bcb240] read_timestamp() failed in the middle
+[matroska,webm @ 000001da84bcac00] File ended prematurely
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Failed to decode tile data
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Failed to decode tile data
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001d984273600] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001d984273600]   Additional information: Keyframe / intra-only frame required to reset decoder state
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+feature hashes filled: 4660 of 4660
+{
+ "threshold_fixed_a_priori": 0.45,
+ "pairs_scored": 9928,
+ "latency_ms_per_pair": 0.0194,
+ "auc_train": 0.8734,
+ "auc_val": 0.8992,
+ "auc_test": 0.8307,
+ "test_negatives_by_hardness": {
+  "easy": 114,
+  "hard": 36
+ },
+ "auc_test_hard_negatives_only": 0.8307,
+ "auc_test_easy_negatives_only": 0.8307,
+ "auc_test_without_heldout_lineage": 0.8486,
+ "auc_test_heldout_lineage_pos_vs_all_neg": 0.7922,
+ "detection_rate_threshold": {
+  "audio_source_only_not_visual_derivation": 0.0,
+  "direct_derivation": 0.823,
+  "edited_version": 0.92,
+  "indirect_derivation": 0.451,
+  "same_family_other": 0.382,
+  "sibling_same_parent": 0.669,
+  "unrelated_distinct_source": 0.0
+ },
+ "direct_derivation_detection_by_transformation": {
+  "audio_mute": {
+   "n": 42,
+   "detected": 0.976,
+   "audio_identical": 0.0
+  },
+  "audio_noise_mix": {
+   "n": 5,
+   "detected": 1.0,
+   "audio_identical": 0.0
+  },
+  "audio_replace": {
+   "n": 55,
+   "detected": 0.964,
+   "audio_identical": 0.0
+  },
+  "caption_burn_in": {
+   "n": 110,
+   "detected": 0.982,
+   "audio_identical": 0.009
+  },
+  "crop_center": {
+   "n": 110,
+   "detected": 0.036,
+   "audio_identical": 0.009
+  },
+  "mirror_color_shift": {
+   "n": 7,
+   "detected": 0.143,
+   "audio_identical": 0.0
+  },
+  "recompress_low": {
+   "n": 220,
+   "detected": 0.986,
+   "audio_identical": 0.014
+  },
+  "reencode_hq": {
+   "n": 55,
+   "detected": 0.964,
+   "audio_identical": 0.0
+  },
+  "reupload_sim": {
+   "n": 7,
+   "detected": 0.857,
+   "audio_identical": 0.0
+  },
+  "speed_change": {
+   "n": 7,
+   "detected": 1.0,
+   "audio_identical": 0.0
+  },
+  "trim_head": {
+   "n": 55,
+   "detected": 0.745,
+   "audio_identical": 0.0
+  },
+  "trim_middle": {
+   "n": 55,
+   "detected": 0.673,
+   "audio_identical": 0.0
+  },
+  "trim_tail": {
+   "n": 55,
+   "detected": 0.8,
+   "audio_identical": 0.0
+  },
+  "watermark_overlay": {
+   "n": 165,
+   "detected": 0.988,
+   "audio_identical": 0.012
+  }
+ },
+ "temporal_start_estimation": {
+  "n": 162,
+  "mean_abs_error_fraction": 0.0758,
+  "within_0_05": 0.704,
+  "first_frame_matched": 0.704,
+  "per_type": {
+   "trim_head": 0.1316,
+   "trim_middle": 0.0935,
+   "trim_tail": 0.0024
+  },
+  "note": "24 sampled frames give ~4% granularity; finer segment bounds need denser frame sampling (computation, not data)"
+ }
+}
+crosswalk rows 252270
+attribution rows 96
+Layer A files set read-only: 729
+checksums lines 1883 payload 17241740566
+docs written; checks failing: []
+matrix: {'PASS': 27, 'PARTIAL': 11, 'BLOCKED': 2}
+decision table 40 {'PASS': 27, 'PARTIAL': 11, 'BLOCKED': 2} {'no': 34, 'conditional': 6}
+{
+"passed_variants": 1131,
+"readable_by_independent_ffprobe": 1131,
+"duration_matches_registry": 1131,
+"carries_controlled_variant_metadata_tag": 1131,
+"parent_chain_complete": 1131,
+"roots_eligible": 1131,
+"audio_variants": 99,
+"audio_donor_documented_real_eligible": 99,
+"caption_variants": 110,
+"caption_variants_with_real_source_text": 110,
+"run_log_return0_and_passed": 1131,
+"tool_params_run_recorded": 1131,
+"failed_variants": 2,
+"failed_excluded_and_no_file": 2,
+"leakage_check": true,
+"heldout_check": true
+}

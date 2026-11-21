@@ -1,0 +1,401 @@
+{
+ "date": "2026-10-27",
+ "repository_live": {
+  "files": 2133,
+  "bytes": 17927214201
+ },
+ "prior_audit_verification": [
+  {
+   "check": "repository files",
+   "live": 2133,
+   "prior_audit": 2133,
+   "agrees": true
+  },
+  {
+   "check": "variants on disk",
+   "live": 1132,
+   "prior_audit": 1132,
+   "agrees": true
+  },
+  {
+   "check": "Commons files",
+   "live": 96,
+   "prior_audit": 96,
+   "agrees": true
+  },
+  {
+   "check": "pairs total",
+   "live": 13659,
+   "prior_audit": 13659,
+   "agrees": true
+  },
+  {
+   "check": "COVID dataset (Zenodo 4557828) is fetched by s1_fetch_metadata.py",
+   "live": "no",
+   "prior_audit": "not stated",
+   "agrees": false
+  }
+ ],
+ "counts": {
+  "audit_ids_total": 40,
+  "data_bearing_datasets": 33,
+  "non_dataset_assets": 7,
+  "verified": 27,
+  "metadata_only": 6,
+  "unverified": 1,
+  "used_by_code": 31,
+  "referenced_or_unused": 2,
+  "used_for_training": 0,
+  "used_for_evaluation": 8,
+  "used_by_runtime": 0,
+  "derived_datasets": 20,
+  "structured_files": 64,
+  "columns_or_fields": 1269,
+  "findings": 24,
+  "requirement_rows": 34,
+  "lineage_rows": 1151,
+  "usage_rows": 227
+ },
+ "datasets": [
+  {
+   "id": "DS-001",
+   "name": "Wikimedia Commons CC/PD video originals",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 1687143702,
+   "used": "Preprocessing use verified; Evaluation use verified (features -> baseline)"
+  },
+  {
+   "id": "DS-002",
+   "name": "Commons source metadata (candidate records)",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 139714,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-003",
+   "name": "ANAKIN subset: trimmed + edited videos",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 2392113142,
+   "used": "Preprocessing use verified; Evaluation use verified (baseline pairs)"
+  },
+  {
+   "id": "DS-004",
+   "name": "ANAKIN subset: edit masks",
+   "availability": "Local files",
+   "provenance": "2",
+   "bytes": 128979239,
+   "used": "Reference only (downloaded by s2, never read)"
+  },
+  {
+   "id": "DS-005",
+   "name": "ANAKIN metadata and official listing",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 1033853,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-006",
+   "name": "InVID Fake Video Corpus 2018 (v3): URLs and labels",
+   "availability": "Metadata only (no media)",
+   "provenance": "1",
+   "bytes": 650024,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-007",
+   "name": "InVID Fake Video Corpus v2.0: URLs, labels, manipulation types",
+   "availability": "Metadata only (no media)",
+   "provenance": "1",
+   "bytes": 74758,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-008",
+   "name": "InVID Fake Video Corpus v1.0: URLs and annotations",
+   "availability": "Metadata only (no media)",
+   "provenance": "1",
+   "bytes": 27904,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-009",
+   "name": "FIVR-200K: YouTube ids, events, relation annotations",
+   "availability": "Metadata only (no media)",
+   "provenance": "1",
+   "bytes": 17873355,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-010",
+   "name": "VCSL: video URLs, copied-segment labels, pair/split files",
+   "availability": "Metadata only (no media)",
+   "provenance": "2",
+   "bytes": 42201384,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-011",
+   "name": "COVID-related misinformation videos and their spread (RW-31)",
+   "availability": "Metadata only (no media)",
+   "provenance": "1",
+   "bytes": 4198098,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-012",
+   "name": "Official record snapshots (Zenodo API, GitHub READMEs/licence)",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 61057,
+   "used": "Preprocessing use verified (provenance/licence evidence read by audit and s1)"
+  },
+  {
+   "id": "DS-013",
+   "name": "Controlled variant media",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 12500690021,
+   "used": "Preprocessing use verified; Evaluation use verified (baseline)"
+  },
+  {
+   "id": "DS-014",
+   "name": "Controlled variant registry",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 1094515,
+   "used": "Preprocessing + Evaluation use verified"
+  },
+  {
+   "id": "DS-015",
+   "name": "Transformation run log",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 954337,
+   "used": "Test-only use (audit/tests) plus s4 writer"
+  },
+  {
+   "id": "DS-016",
+   "name": "Real-world media master",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 148756771,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-017",
+   "name": "Media relationship edges",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 149867390,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-018",
+   "name": "Platform observations",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 110755040,
+   "used": "Test/audit use only downstream of s3"
+  },
+  {
+   "id": "DS-019",
+   "name": "Evidence ledger",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 670524,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-020",
+   "name": "Feature manifest",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 2252894,
+   "used": "Preprocessing use verified"
+  },
+  {
+   "id": "DS-021",
+   "name": "Visual 24-frame dHash features",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 1133311,
+   "used": "Evaluation use verified (baseline)"
+  },
+  {
+   "id": "DS-022",
+   "name": "Audio fingerprint features",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 216956,
+   "used": "Evaluation use verified (baseline)"
+  },
+  {
+   "id": "DS-023",
+   "name": "Training pairs",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 4719493,
+   "used": "Evaluation use verified (baseline)"
+  },
+  {
+   "id": "DS-024",
+   "name": "Group examples (5-6 videos)",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 37349,
+   "used": "Test/audit use only (no experiment)"
+  },
+  {
+   "id": "DS-025",
+   "name": "Split manifest (split-v2)",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 72085,
+   "used": "Preprocessing use verified (pairs/variants splits)"
+  },
+  {
+   "id": "DS-026",
+   "name": "Duplicate map",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 78429,
+   "used": "Test/audit use only downstream of s3"
+  },
+  {
+   "id": "DS-027",
+   "name": "Source registry",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 23226,
+   "used": "Test/audit use only downstream of s3"
+  },
+  {
+   "id": "DS-028",
+   "name": "Download/access attempt log",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 215252,
+   "used": "Preprocessing use verified (writer) / Test-audit use"
+  },
+  {
+   "id": "DS-029",
+   "name": "Campaign candidate clusters",
+   "availability": "Local file, 0 records",
+   "provenance": "1",
+   "bytes": 219,
+   "used": "Test/audit use only (empty)"
+  },
+  {
+   "id": "DS-030",
+   "name": "Experiment registry",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 3979,
+   "used": "Evaluation use verified (written by s9)"
+  },
+  {
+   "id": "DS-031",
+   "name": "Manifests (checksums, crosswalk, attribution, selection plan, storage budget, protocol)",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 41965067,
+   "used": "Test/audit use"
+  },
+  {
+   "id": "DS-032",
+   "name": "Build intermediates and run logs",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 3706024,
+   "used": "Pipeline resume use verified"
+  },
+  {
+   "id": "DS-033",
+   "name": "Acceptance and QA report artefacts",
+   "availability": "Local files",
+   "provenance": "1",
+   "bytes": 32201,
+   "used": "N/A"
+  },
+  {
+   "id": "DS-034",
+   "name": "Dataset documentation corpus (docs/datasets, incl. necessity_audit)",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 412378,
+   "used": "N/A"
+  },
+  {
+   "id": "DS-035",
+   "name": "ORVEX_Literature corpus (35 PDFs, text, review workbook)",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 240494329,
+   "used": "Documented/reference"
+  },
+  {
+   "id": "DS-036",
+   "name": "ORVEX_Complete_Project_Specification.pdf",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 251692,
+   "used": "Documented/reference"
+  },
+  {
+   "id": "DS-037",
+   "name": "LOOP-MIND novelty verification workbook",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 20779,
+   "used": "N/A"
+  },
+  {
+   "id": "DS-038",
+   "name": "Tools: portable FFmpeg 9.0.2",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 443989875,
+   "used": "N/A"
+  },
+  {
+   "id": "DS-039",
+   "name": "Pipeline code and tests",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 303686,
+   "used": "N/A"
+  },
+  {
+   "id": "DS-040",
+   "name": "Root-level miscellaneous files",
+   "availability": "Local files",
+   "provenance": "4",
+   "bytes": 149,
+   "used": "N/A"
+  }
+ ],
+ "columns": {
+  "total": 1269,
+  "unknown_semantics": 813,
+  "files": 64
+ },
+ "findings": 24,
+ "outputs": [
+  "COMPLETE_COLUMN_DICTIONARY.csv",
+  "DATASET_GAPS_AND_RECOMMENDATIONS.md",
+  "DATASET_LINEAGE_AND_RELATIONSHIPS.md",
+  "DATASET_NECESSITY_AND_REDUNDANCY_REPORT.md",
+  "DATASET_PROVENANCE_INVENTORY.csv",
+  "DATASET_QUALITY_AND_LIMITATIONS_REPORT.md",
+  "DATASET_SCHEMA_REFERENCE.md",
+  "DATASET_TO_IMPLEMENTATION_MAP.csv",
+  "DATASET_TO_MODEL_AND_EXPERIMENT_MAP.csv",
+  "DATASET_TO_PROBLEM_STATEMENT_MATRIX.csv",
+  "ORVEX_DATASET_ECOSYSTEM_GUIDE.md",
+  "verification_against_prior_audit.json"
+ ]
+}

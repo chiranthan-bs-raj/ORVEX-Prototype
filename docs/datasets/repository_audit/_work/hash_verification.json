@@ -1,0 +1,11 @@
+{
+ "checked": 796,
+ "match": 796,
+ "mismatch": 0,
+ "not_in_manifest": 0,
+ "manifest_lines": 1883,
+ "scope": "all Commons + ANAKIN media files and a seeded random sample of 200 controlled variants (re-hashed now)",
+ "mismatches": [],
+ "on_disk_not_in_manifest": [],
+ "in_manifest_not_on_disk": []
+}

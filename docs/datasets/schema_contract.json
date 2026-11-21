@@ -1,0 +1,2630 @@
+{
+ "origin_codes": {
+  "a": "copied from a named source field",
+  "b": "normalized/renamed from a named source field",
+  "c": "derived by an explicit deterministic rule from named fields",
+  "d": "computed from the actual media/files by a named tool",
+  "e": "annotated/decided by a human analyst with stated evidence",
+  "f": "new ORVEX bookkeeping/administrative column"
+ },
+ "vocabularies": {
+  "record_origin": [
+   "real_world_source_record",
+   "orvex_normalized_record",
+   "orvex_controlled_variant_record",
+   "orvex_computed_record"
+  ],
+  "media_origin": [
+   "naturally_collected_real_world",
+   "real_world_human_edited_dataset",
+   "controlled_variant",
+   "not_applicable_metadata_only"
+  ],
+  "transformation_status": [
+   "none_source_unmodified",
+   "controlled_transformation_applied",
+   "controlled_transformation_failed",
+   "not_applicable"
+  ],
+  "access_status": [
+   "downloaded_authorized",
+   "metadata_only",
+   "not_found",
+   "private_or_deleted",
+   "blocked_by_terms",
+   "access_not_available",
+   "retry_pending"
+  ],
+  "direction_status": [
+   "directed_supported_by_source",
+   "directed_controlled_transformation",
+   "unknown_direction",
+   "non_directional"
+  ],
+  "label_status": [
+   "source_ground_truth",
+   "controlled_ground_truth",
+   "uncertain",
+   "unknown",
+   "not_assessed"
+  ],
+  "inclusion_status": [
+   "included_media_and_metadata",
+   "included_metadata_only",
+   "included_selected_subset",
+   "excluded_license",
+   "excluded_not_real_world_for_scope",
+   "excluded_duplicate_version",
+   "excluded_inaccessible",
+   "excluded_over_budget",
+   "research_lead_unverified",
+   "legal_review_required"
+  ],
+  "split": [
+   "train",
+   "val",
+   "test",
+   "excluded"
+  ],
+  "validation_status": [
+   "passed",
+   "failed",
+   "not_run"
+  ]
+ },
+ "tables": {
+  "source_registry": {
+   "path": "data/manifests/source_registry.csv",
+   "purpose": "Every dataset/source considered, with official source, terms, access, size and decision.",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "source_dataset_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX id (RW-xx)",
+     "description": "Stable ORVEX id of the real-world source dataset."
+    },
+    {
+     "name": "title",
+     "type": "str",
+     "nullable": false,
+     "origin": "a",
+     "lineage": "official dataset page/paper title",
+     "description": "Full title."
+    },
+    {
+     "name": "creator",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official record creators",
+     "description": "Creators/authors."
+    },
+    {
+     "name": "release_version",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official release/version",
+     "description": "Release or version label."
+    },
+    {
+     "name": "official_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official landing page",
+     "description": "Official landing URL."
+    },
+    {
+     "name": "download_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official download/repository URL",
+     "description": "Where files come from."
+    },
+    {
+     "name": "paper_doi_or_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "paper/DOI",
+     "description": "Associated paper."
+    },
+    {
+     "name": "accessed_date",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "date of verification",
+     "description": "Date the page/API was accessed."
+    },
+    {
+     "name": "license_terms",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "licence field on official page",
+     "description": "Licence/terms exactly as stated (or 'not stated')."
+    },
+    {
+     "name": "license_evidence_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "URL where the licence was read",
+     "description": "Evidence link."
+    },
+    {
+     "name": "bytes_or_urls_provided",
+     "type": "str",
+     "nullable": false,
+     "origin": "a",
+     "lineage": "official description",
+     "description": "media_bytes / metadata_urls_only / mixed / unverified."
+    },
+    {
+     "name": "derivative_use_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "licence text",
+     "description": "permitted / not_stated / not_permitted / unverified."
+    },
+    {
+     "name": "training_use_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "licence text",
+     "description": "permitted / not_stated / unverified."
+    },
+    {
+     "name": "redistribution_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "licence text",
+     "description": "Whether files may be redistributed (with conditions)."
+    },
+    {
+     "name": "real_world_eligibility",
+     "type": "str",
+     "nullable": false,
+     "origin": "e",
+     "lineage": "analyst decision with evidence",
+     "description": "Eligible / not eligible for the strict real-world collection and why."
+    },
+    {
+     "name": "native_task",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official description",
+     "description": "Task the source was built for."
+    },
+    {
+     "name": "native_labels",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official description",
+     "description": "Native labels/annotations."
+    },
+    {
+     "name": "media_origin_characterization",
+     "type": "str",
+     "nullable": false,
+     "origin": "e",
+     "lineage": "analyst decision",
+     "description": "How the media came to exist (user-uploaded, circulated, professionally edited...)."
+    },
+    {
+     "name": "release_size_bytes",
+     "type": "int",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official file sizes",
+     "description": "Total official release size when known."
+    },
+    {
+     "name": "planned_download_bytes",
+     "type": "int",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "selection plan",
+     "description": "Budgeted bytes."
+    },
+    {
+     "name": "actual_local_bytes",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "du of local folder",
+     "description": "Measured local bytes."
+    },
+    {
+     "name": "record_count_local",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "row count of local files",
+     "description": "Records held locally."
+    },
+    {
+     "name": "auth_required",
+     "type": "str",
+     "nullable": false,
+     "origin": "a",
+     "lineage": "official access docs",
+     "description": "none / account / agreement / API."
+    },
+    {
+     "name": "overlap_with",
+     "type": "str",
+     "nullable": true,
+     "origin": "e",
+     "lineage": "analyst comparison",
+     "description": "Other sources it overlaps."
+    },
+    {
+     "name": "inclusion_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "controlled vocabulary",
+     "description": "Decision."
+    },
+    {
+     "name": "inclusion_reason",
+     "type": "str",
+     "nullable": false,
+     "origin": "e",
+     "lineage": "analyst decision",
+     "description": "Why."
+    },
+    {
+     "name": "tasks_supported",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "mapping to ORVEX modules",
+     "description": "ORVEX modules/tasks supported."
+    },
+    {
+     "name": "evidence_links",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "URLs consulted",
+     "description": "Pipe-separated URLs."
+    },
+    {
+     "name": "limitations",
+     "type": "str",
+     "nullable": true,
+     "origin": "e",
+     "lineage": "analyst notes",
+     "description": "Known limitations."
+    },
+    {
+     "name": "verification_level",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "see policy",
+     "description": "verified_official_page / verified_api / research_lead_unverified."
+    }
+   ]
+  },
+  "real_world_media_master": {
+   "path": "data/derived/tables/real_world_media_master.csv",
+   "purpose": "Normalized master of every real-world media record (downloaded or metadata-only). Controlled variants are NOT here.",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX id",
+     "description": "Stable internal id (RW-<src>-...)."
+    },
+    {
+     "name": "source_dataset_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "source_registry",
+     "description": "Source dataset."
+    },
+    {
+     "name": "release_version",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "source release",
+     "description": "Release/version of source."
+    },
+    {
+     "name": "native_record_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC cascade_id / FIVR query+id / VCSL uuid / ANAKIN video-id / Commons pageid",
+     "description": "Native id of the record."
+    },
+    {
+     "name": "native_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "platform video id or file title",
+     "description": "Native media id."
+    },
+    {
+     "name": "platform",
+     "type": "str",
+     "nullable": true,
+     "origin": "b",
+     "lineage": "host of source URL / 'wikimedia_commons' / 'vimeo'",
+     "description": "Platform normalized to lowercase name."
+    },
+    {
+     "name": "platform_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "parsed from URL",
+     "description": "Platform video id."
+    },
+    {
+     "name": "source_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC video_url / VCSL url / ANAKIN url / Commons descriptionurl",
+     "description": "Source URL as published."
+    },
+    {
+     "name": "canonical_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "normalized source_url",
+     "description": "Canonical URL (scheme/host lowercased, tracking removed)."
+    },
+    {
+     "name": "title",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons title / ANAKIN task text",
+     "description": "Title if the source has one."
+    },
+    {
+     "name": "description_caption",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons ImageDescription / ANAKIN task",
+     "description": "Caption/description."
+    },
+    {
+     "name": "publisher_account_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "b",
+     "lineage": "Commons uploader username (public) ",
+     "description": "Publisher account as published; pseudonymise in reports."
+    },
+    {
+     "name": "event_or_cascade_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC cascade_id / FIVR event id / ANAKIN video-id",
+     "description": "Group the record belongs to."
+    },
+    {
+     "name": "published_time_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "b",
+     "lineage": "Commons upload timestamp",
+     "description": "Publish time (only when the source provides one)."
+    },
+    {
+     "name": "observed_time_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "Observation time if provided by source (rare)."
+    },
+    {
+     "name": "collected_time_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX run",
+     "description": "When ORVEX collected/registered the record."
+    },
+    {
+     "name": "time_precision",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "second / unknown."
+    },
+    {
+     "name": "duration_s",
+     "type": "float",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Duration (downloaded media only)."
+    },
+    {
+     "name": "width",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Width."
+    },
+    {
+     "name": "height",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Height."
+    },
+    {
+     "name": "fps",
+     "type": "float",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Frame rate."
+    },
+    {
+     "name": "video_codec",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Video codec."
+    },
+    {
+     "name": "audio_codec",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Audio codec."
+    },
+    {
+     "name": "has_audio",
+     "type": "bool",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Audio stream present."
+    },
+    {
+     "name": "container",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Container."
+    },
+    {
+     "name": "file_bytes",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "os.stat",
+     "description": "File size."
+    },
+    {
+     "name": "local_path",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Relative path of local file."
+    },
+    {
+     "name": "sha256",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "hashlib SHA-256",
+     "description": "File hash (locally computed)."
+    },
+    {
+     "name": "access_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC.access_status",
+     "description": "Access status."
+    },
+    {
+     "name": "playable_status",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffmpeg decode check",
+     "description": "playable / unplayable / not_checked."
+    },
+    {
+     "name": "rights_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "licence",
+     "description": "Rights decision for storage/processing."
+    },
+    {
+     "name": "license",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons LicenseShortName / dataset licence",
+     "description": "Licence."
+    },
+    {
+     "name": "license_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons LicenseUrl",
+     "description": "Licence URL."
+    },
+    {
+     "name": "attribution",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons Artist/Credit / dataset citation",
+     "description": "Attribution string."
+    },
+    {
+     "name": "record_origin",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC.record_origin",
+     "description": "Origin of the record."
+    },
+    {
+     "name": "media_origin",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC.media_origin",
+     "description": "Origin of the media."
+    },
+    {
+     "name": "native_authenticity_label",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC label (fake/real)",
+     "description": "Native label exactly as published."
+    },
+    {
+     "name": "native_misleading_label",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC label",
+     "description": "Native label (same field) kept separately."
+    },
+    {
+     "name": "native_manipulation_type",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "ANAKIN manipulation-type",
+     "description": "Native manipulation type."
+    },
+    {
+     "name": "normalized_authenticity_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "mapping rule in policy",
+     "description": "unknown unless the native label states it; 'fake' in FVC = debunked, NOT AI-generated."
+    },
+    {
+     "name": "normalized_misleading_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "mapping rule",
+     "description": "debunked_misleading / verified_not_misleading / not_assessed."
+    },
+    {
+     "name": "coordination_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX policy",
+     "description": "not_assessed for every record: no independent account/time coordination evidence exists locally."
+    },
+    {
+     "name": "evidence_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "evidence_ledger",
+     "description": "Evidence record backing the source annotation / licence of this record."
+    },
+    {
+     "name": "perceptual_hash_ref",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "feature_manifest visual_dhash24",
+     "description": "Reference to the computed 24-frame dHash features (local media only)."
+    },
+    {
+     "name": "annotation_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "source_annotation / none."
+    },
+    {
+     "name": "qc_flags",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "ORVEX QC rules",
+     "description": "Flags (too_short, no_audio, decode_errors...)."
+    },
+    {
+     "name": "duplicate_of_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "duplicate_map",
+     "description": "Canonical media id if this is a duplicate."
+    },
+    {
+     "name": "usable_for_variants",
+     "type": "bool",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "rights + QC rules",
+     "description": "Eligible as source for controlled variants."
+    },
+    {
+     "name": "missingness_note",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Why fields are null."
+    }
+   ]
+  },
+  "controlled_variant_registry": {
+   "path": "data/derived/tables/controlled_variant_registry.csv",
+   "purpose": "Every controlled variant rendered by ORVEX from eligible real-world media. Never mixed with naturally collected media.",
+   "phase": "phase1",
+   "columns": [
+    {
+     "name": "variant_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX id",
+     "description": "Id of the created video (CV-...)."
+    },
+    {
+     "name": "direct_parent_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX transformation plan",
+     "description": "Immediate parent (real source or earlier variant)."
+    },
+    {
+     "name": "root_source_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "media master",
+     "description": "Real-world root source."
+    },
+    {
+     "name": "ancestor_chain",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "parent links",
+     "description": "Pipe-separated ancestors up to the root."
+    },
+    {
+     "name": "video_source_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "media master",
+     "description": "Real-world source of the picture track."
+    },
+    {
+     "name": "audio_source_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "media master",
+     "description": "Real-world source of replaced/mixed audio."
+    },
+    {
+     "name": "caption_text_source_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "media master",
+     "description": "Real-world record the caption text came from."
+    },
+    {
+     "name": "caption_text",
+     "type": "str",
+     "nullable": true,
+     "origin": "b",
+     "lineage": "title of the caption-source record (ASCII-normalised)",
+     "description": "Caption burned in."
+    },
+    {
+     "name": "caption_text_origin_field",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "Field of the source record used (commons_title)."
+    },
+    {
+     "name": "transformation_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "catalogue",
+     "description": "T01-T14."
+    },
+    {
+     "name": "transformation_name",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "catalogue",
+     "description": "Name."
+    },
+    {
+     "name": "transformation_family",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "catalogue",
+     "description": "Family."
+    },
+    {
+     "name": "parameters_json",
+     "type": "json",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Exact parameters."
+    },
+    {
+     "name": "tool_name",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "ffmpeg."
+    },
+    {
+     "name": "tool_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "ffmpeg -version",
+     "description": "Tool version."
+    },
+    {
+     "name": "run_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Run id."
+    },
+    {
+     "name": "seed",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Deterministic selection key."
+    },
+    {
+     "name": "created_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Creation time."
+    },
+    {
+     "name": "local_path",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Path of the created file (blank for failed variants: no file retained)."
+    },
+    {
+     "name": "sha256",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "hashlib",
+     "description": "Output hash (blank for failed variants)."
+    },
+    {
+     "name": "bytes",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "os.stat",
+     "description": "Output size."
+    },
+    {
+     "name": "duration_s",
+     "type": "float",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Output duration."
+    },
+    {
+     "name": "width",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Width."
+    },
+    {
+     "name": "height",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Height."
+    },
+    {
+     "name": "fps",
+     "type": "float",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "fps."
+    },
+    {
+     "name": "has_audio",
+     "type": "bool",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Audio present."
+    },
+    {
+     "name": "generation_depth",
+     "type": "int",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "chain length",
+     "description": "Edits from the real root."
+    },
+    {
+     "name": "chain_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "catalogue",
+     "description": "Chain id."
+    },
+    {
+     "name": "permission_basis",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "root licence",
+     "description": "Why the transformation is permitted."
+    },
+    {
+     "name": "root_license",
+     "type": "str",
+     "nullable": false,
+     "origin": "a",
+     "lineage": "media master license",
+     "description": "Licence of root."
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "ffprobe checks",
+     "description": "passed/failed/not_run."
+    },
+    {
+     "name": "validation_checks_json",
+     "type": "json",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "Checks and results."
+    },
+    {
+     "name": "failure_reason",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Reason if failed."
+    },
+    {
+     "name": "media_origin",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC",
+     "description": "Always controlled_variant."
+    },
+    {
+     "name": "record_origin",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC",
+     "description": "Always orvex_controlled_variant_record."
+    },
+    {
+     "name": "transformation_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC",
+     "description": "controlled_transformation_applied / failed."
+    },
+    {
+     "name": "usable_for_training",
+     "type": "bool",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "validation + split + held-out rule",
+     "description": "True only if passed, train split and no held-out transform in lineage."
+    },
+    {
+     "name": "source_split",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "split_manifest",
+     "description": "Split of the root source family."
+    }
+   ]
+  },
+  "media_relationship_edges": {
+   "path": "data/derived/tables/media_relationship_edges.csv",
+   "purpose": "Relationship edges: source-provided native relations (kept with original label) and controlled-transformation lineage.",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "relationship_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Edge id."
+    },
+    {
+     "name": "source_dataset_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "source_registry",
+     "description": "Where the relation comes from (or ORVEX-CTRL)."
+    },
+    {
+     "name": "relation_scope",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "real_native / controlled_lineage."
+    },
+    {
+     "name": "evidence_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "evidence_ledger",
+     "description": "Evidence record."
+    },
+    {
+     "name": "media_a_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "media master/variant registry",
+     "description": "First item."
+    },
+    {
+     "name": "media_b_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "media master/variant registry",
+     "description": "Second item."
+    },
+    {
+     "name": "native_media_a_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "native ids",
+     "description": "Native id of A."
+    },
+    {
+     "name": "native_media_b_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "native ids",
+     "description": "Native id of B."
+    },
+    {
+     "name": "native_label",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FIVR ND/DS/CS/IS; VCSL label_file; FVC label; ANAKIN manipulation-type",
+     "description": "Label exactly as published."
+    },
+    {
+     "name": "normalized_relation_type",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "mapping table",
+     "description": "e.g. near_duplicate, partial_temporal_copy, same_scene_not_copy, same_incident_not_copy, edited_version, controlled_*."
+    },
+    {
+     "name": "direction_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "VOC",
+     "description": "Direction support."
+    },
+    {
+     "name": "parent_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "only when direction supported",
+     "description": "Parent."
+    },
+    {
+     "name": "child_media_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "only when direction supported",
+     "description": "Child."
+    },
+    {
+     "name": "a_segment_start_s",
+     "type": "float",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "VCSL label_file",
+     "description": "Copied segment start in A."
+    },
+    {
+     "name": "a_segment_end_s",
+     "type": "float",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "VCSL label_file",
+     "description": "End in A."
+    },
+    {
+     "name": "b_segment_start_s",
+     "type": "float",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "VCSL label_file",
+     "description": "Start in B."
+    },
+    {
+     "name": "b_segment_end_s",
+     "type": "float",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "VCSL label_file",
+     "description": "End in B."
+    },
+    {
+     "name": "overlap_ratio",
+     "type": "float",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "segment durations / duration",
+     "description": "Copied-duration ratio when measurable."
+    },
+    {
+     "name": "transformation_type",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "catalogue / ANAKIN manipulation-type",
+     "description": "Transformation type."
+    },
+    {
+     "name": "label_source",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "source_annotation / controlled_transformation_log."
+    },
+    {
+     "name": "label_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC",
+     "description": "Label status."
+    },
+    {
+     "name": "evidence_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "kind of evidence behind the label: source_annotation / controlled_transformation_log (separate from label status)."
+    },
+    {
+     "name": "confidence_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "No numeric confidence: source_ground_truth / controlled_ground_truth."
+    },
+    {
+     "name": "reviewer",
+     "type": "str",
+     "nullable": true,
+     "origin": "e",
+     "lineage": "human reviewer",
+     "description": "Reviewer id (none yet)."
+    },
+    {
+     "name": "method_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Script version."
+    },
+    {
+     "name": "created_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Creation time."
+    },
+    {
+     "name": "media_available_locally",
+     "type": "bool",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "file exists",
+     "description": "Both media bytes present locally."
+    },
+    {
+     "name": "conflict_flag",
+     "type": "bool",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "cross-source check",
+     "description": "Conflicting labels between sources."
+    },
+    {
+     "name": "notes",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Notes."
+    }
+   ]
+  },
+  "platform_observations": {
+   "path": "data/derived/tables/platform_observations.csv",
+   "purpose": "Real posts/observations of media on platforms as provided by the sources (no invented posts).",
+   "phase": "phase2",
+   "columns": [
+    {
+     "name": "observation_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "media master",
+     "description": "Media observed."
+    },
+    {
+     "name": "observation_type",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "upload / publish / removal / share_reference / cascade_member."
+    },
+    {
+     "name": "coordination_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "not_assessed: no independent coordination evidence."
+    },
+    {
+     "name": "platform",
+     "type": "str",
+     "nullable": true,
+     "origin": "b",
+     "lineage": "URL host",
+     "description": "Platform."
+    },
+    {
+     "name": "platform_post_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "parsed from URL",
+     "description": "Post/video id."
+    },
+    {
+     "name": "post_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "source URL",
+     "description": "URL."
+    },
+    {
+     "name": "account_id_pseudonym",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "SHA-256 prefix of public account name",
+     "description": "Pseudonymised account id (policy)."
+    },
+    {
+     "name": "account_id_source_field",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "Source field used (commons uploader) or null."
+    },
+    {
+     "name": "publish_time_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "b",
+     "lineage": "Commons upload timestamp",
+     "description": "Publish time."
+    },
+    {
+     "name": "observation_time_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "Observation time."
+    },
+    {
+     "name": "time_precision",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "second / unknown."
+    },
+    {
+     "name": "caption_text",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons description",
+     "description": "Caption."
+    },
+    {
+     "name": "hashtags",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "Not provided."
+    },
+    {
+     "name": "engagement_refs",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "Commons global usage count",
+     "description": "Permitted engagement/reuse reference."
+    },
+    {
+     "name": "metadata_source",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "source_registry",
+     "description": "Source dataset."
+    },
+    {
+     "name": "collection_method",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "official_api / dataset_file."
+    },
+    {
+     "name": "order_in_cascade",
+     "type": "int",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "row order inside FVC cascade",
+     "description": "Temporal order inside cascade as stated by the authors (not a timestamp)."
+    },
+    {
+     "name": "cascade_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC cascade_id",
+     "description": "Cascade id."
+    },
+    {
+     "name": "access_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC",
+     "description": "Access."
+    },
+    {
+     "name": "evidence_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "evidence_ledger",
+     "description": "Evidence."
+    },
+    {
+     "name": "limitations",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Limitations."
+    }
+   ]
+  },
+  "evidence_ledger": {
+   "path": "data/derived/tables/evidence_ledger.csv",
+   "purpose": "Evidence records supporting labels, relations and rights decisions.",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "evidence_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "evidence_type",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "source_annotation / source_metadata / controlled_transformation_log / machine_measurement / license_record."
+    },
+    {
+     "name": "source_dataset_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "source_registry",
+     "description": "Source."
+    },
+    {
+     "name": "subject_type",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "media / relationship_set / variant / license."
+    },
+    {
+     "name": "subject_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Subject id or set name."
+    },
+    {
+     "name": "source_url",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "official URL",
+     "description": "URL."
+    },
+    {
+     "name": "source_record_ref",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "file path / record key",
+     "description": "Where inside the source."
+    },
+    {
+     "name": "claim_supported",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "What this evidence supports."
+    },
+    {
+     "name": "claim_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "source_asserted / measured / controlled_by_construction."
+    },
+    {
+     "name": "observed_fact_vs_inference",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "observed_fact / source_annotation / machine_measurement / analyst_inference."
+    },
+    {
+     "name": "verification_method",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "How checked."
+    },
+    {
+     "name": "evidence_time_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "When evidence was recorded."
+    },
+    {
+     "name": "temporal_precision",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "n/a",
+     "description": "Precision."
+    },
+    {
+     "name": "file_sha256",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "hashlib",
+     "description": "Hash of the evidence file."
+    },
+    {
+     "name": "reviewer_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "unreviewed / source_curated."
+    },
+    {
+     "name": "permission_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "licence",
+     "description": "Permission."
+    },
+    {
+     "name": "confidence_basis",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "No calibrated numeric confidence; basis stated."
+    },
+    {
+     "name": "limitations",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Limitations."
+    }
+   ]
+  },
+  "feature_manifest": {
+   "path": "data/derived/tables/feature_manifest.csv",
+   "purpose": "What features actually exist (and which are not computed).",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "feature_record_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "media master / variants",
+     "description": "Media or ALL_LOCAL for aggregate rows."
+    },
+    {
+     "name": "feature_type",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "visual_dhash_24 / audio_pcm_md5_8k / audio_envelope_1s / visual_embedding / audio_embedding / ocr_text / asr_transcript / text_embedding / scene_boundaries."
+    },
+    {
+     "name": "extraction_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "script result",
+     "description": "computed / not_computed / failed."
+    },
+    {
+     "name": "tool_name",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Tool."
+    },
+    {
+     "name": "tool_version",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "tool",
+     "description": "Version."
+    },
+    {
+     "name": "parameters_json",
+     "type": "json",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Parameters."
+    },
+    {
+     "name": "sample_timestamps",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "frame indices",
+     "description": "Sample positions."
+    },
+    {
+     "name": "feature_format",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Format/dimension."
+    },
+    {
+     "name": "storage_path",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "File holding the feature."
+    },
+    {
+     "name": "storage_bytes",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "os.stat",
+     "description": "Size."
+    },
+    {
+     "name": "feature_sha256",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "hashlib",
+     "description": "Hash."
+    },
+    {
+     "name": "extracted_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Time."
+    },
+    {
+     "name": "error",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Error."
+    },
+    {
+     "name": "permission_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "licence",
+     "description": "Permission."
+    }
+   ]
+  },
+  "training_pairs": {
+   "path": "data/derived/tables/training_pairs.csv",
+   "purpose": "Model examples (related/unrelated/uncertain pairs) with local media only, split by source family.",
+   "phase": "phase1",
+   "columns": [
+    {
+     "name": "example_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "media_a_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "master/variants",
+     "description": "A."
+    },
+    {
+     "name": "media_b_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "master/variants",
+     "description": "B."
+    },
+    {
+     "name": "relationship_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "edges",
+     "description": "Edge backing the label (null for negatives)."
+    },
+    {
+     "name": "label_binary_related",
+     "type": "int",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "relationship_class",
+     "description": "1 related / 0 not related."
+    },
+    {
+     "name": "relationship_class",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "edge types",
+     "description": "direct_derivation / indirect_derivation / sibling_same_parent / same_family_other / edited_version / unrelated_distinct_source."
+    },
+    {
+     "name": "native_label",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "source label",
+     "description": "Native label if from a source."
+    },
+    {
+     "name": "normalized_label",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "mapping",
+     "description": "Normalized label."
+    },
+    {
+     "name": "label_origin",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "controlled_lineage / source_annotation / negative_sampling_rule."
+    },
+    {
+     "name": "label_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC",
+     "description": "Status."
+    },
+    {
+     "name": "evidence_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ledger",
+     "description": "Evidence."
+    },
+    {
+     "name": "feature_refs",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "feature_manifest",
+     "description": "Feature ids."
+    },
+    {
+     "name": "source_family_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "root source",
+     "description": "Family used for splitting (A's family)."
+    },
+    {
+     "name": "event_or_cascade_group_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "a",
+     "lineage": "FVC/ANAKIN group",
+     "description": "Group."
+    },
+    {
+     "name": "split",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "split_manifest",
+     "description": "train/val/test/excluded."
+    },
+    {
+     "name": "split_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Version."
+    },
+    {
+     "name": "sampling_method",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "How the pair was chosen."
+    },
+    {
+     "name": "negative_rationale",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Why a negative is credible."
+    },
+    {
+     "name": "hardness",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "rule",
+     "description": "easy/medium/hard."
+    },
+    {
+     "name": "leakage_flag",
+     "type": "bool",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "leakage test",
+     "description": "True if pair crosses families/splits."
+    },
+    {
+     "name": "exclusion_reason",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Reason excluded."
+    },
+    {
+     "name": "includes_heldout_transform",
+     "type": "bool",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "lineage",
+     "description": "Involves a test-only transformation."
+    },
+    {
+     "name": "created_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Time."
+    }
+   ]
+  },
+  "campaign_candidate_clusters": {
+   "path": "data/derived/tables/campaign_candidate_clusters.csv",
+   "purpose": "Candidate clusters for human review. EMPTY: no authorised account+time evidence is available locally (see QA report).",
+   "phase": "phase2",
+   "columns": [
+    {
+     "name": "cluster_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "observation_ids",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "observations",
+     "description": "Observations."
+    },
+    {
+     "name": "media_ids",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "master",
+     "description": "Media."
+    },
+    {
+     "name": "account_pseudonyms",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "observations",
+     "description": "Accounts."
+    },
+    {
+     "name": "time_window_start_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "observations",
+     "description": "Start."
+    },
+    {
+     "name": "time_window_end_utc",
+     "type": "datetime",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "observations",
+     "description": "End."
+    },
+    {
+     "name": "common_media_signals",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "edges",
+     "description": "Media signals."
+    },
+    {
+     "name": "posting_pattern_signals",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "observations",
+     "description": "Posting signals."
+    },
+    {
+     "name": "independent_coordination_evidence",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "evidence",
+     "description": "Independent evidence."
+    },
+    {
+     "name": "candidate_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "candidate_cluster / not_assessed."
+    },
+    {
+     "name": "reviewer",
+     "type": "str",
+     "nullable": true,
+     "origin": "e",
+     "lineage": "human",
+     "description": "Reviewer."
+    },
+    {
+     "name": "limitations",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Limitations."
+    }
+   ]
+  },
+  "transformation_run_log": {
+   "path": "data/derived/tables/transformation_run_log.csv",
+   "purpose": "One row per transformation execution.",
+   "phase": "phase1",
+   "columns": [
+    {
+     "name": "run_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Run id."
+    },
+    {
+     "name": "variant_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "variant registry",
+     "description": "Output."
+    },
+    {
+     "name": "input_media_ids",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Inputs (video|audio donor)."
+    },
+    {
+     "name": "tool_name",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Tool."
+    },
+    {
+     "name": "tool_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "ffmpeg",
+     "description": "Version."
+    },
+    {
+     "name": "command_config",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Full argument list (root path abstracted)."
+    },
+    {
+     "name": "parameters_json",
+     "type": "json",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Parameters."
+    },
+    {
+     "name": "started_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Time."
+    },
+    {
+     "name": "return_code",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "process",
+     "description": "Exit code."
+    },
+    {
+     "name": "output_validation_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "ffprobe",
+     "description": "passed/failed."
+    },
+    {
+     "name": "output_bytes",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "os.stat",
+     "description": "Bytes."
+    },
+    {
+     "name": "storage_delta_bytes",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "os.stat",
+     "description": "Payload change."
+    },
+    {
+     "name": "error",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "process",
+     "description": "stderr tail."
+    },
+    {
+     "name": "deterministic_notes",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Determinism notes."
+    },
+    {
+     "name": "seed",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Selection key."
+    }
+   ]
+  },
+  "download_access_attempt_log": {
+   "path": "data/manifests/download_access_attempt_log.csv",
+   "purpose": "Every download/access attempt.",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "attempt_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "source_dataset_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "registry",
+     "description": "Source."
+    },
+    {
+     "name": "media_or_file_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Item."
+    },
+    {
+     "name": "url",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "URL (blank for policy-skipped rows)."
+    },
+    {
+     "name": "attempt_time_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Time."
+    },
+    {
+     "name": "method",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "http_get / api."
+    },
+    {
+     "name": "http_status",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "response",
+     "description": "HTTP status."
+    },
+    {
+     "name": "result_category",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "ok / failed / skipped_terms / skipped_budget."
+    },
+    {
+     "name": "terms_decision",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "policy",
+     "description": "Decision."
+    },
+    {
+     "name": "retry_count",
+     "type": "int",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Retries."
+    },
+    {
+     "name": "bytes",
+     "type": "int",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "response",
+     "description": "Bytes."
+    },
+    {
+     "name": "sha256",
+     "type": "str",
+     "nullable": true,
+     "origin": "d",
+     "lineage": "hashlib",
+     "description": "Hash."
+    },
+    {
+     "name": "final_status",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "VOC.access_status",
+     "description": "Final status."
+    },
+    {
+     "name": "note",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Note."
+    }
+   ]
+  },
+  "split_manifest": {
+   "path": "data/derived/splits/split_manifest.csv",
+   "purpose": "Source-family level split assignment.",
+   "phase": "phase1",
+   "columns": [
+    {
+     "name": "split_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Version."
+    },
+    {
+     "name": "source_family_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "master",
+     "description": "Root source."
+    },
+    {
+     "name": "source_dataset_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "registry",
+     "description": "Dataset."
+    },
+    {
+     "name": "split",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "hash rule",
+     "description": "Assigned split."
+    },
+    {
+     "name": "assignment_method",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Rule."
+    },
+    {
+     "name": "seed",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Seed."
+    },
+    {
+     "name": "domain_stratum",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "search theme / manipulation type",
+     "description": "Stratum."
+    },
+    {
+     "name": "n_family_items",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "count",
+     "description": "Items in family."
+    },
+    {
+     "name": "n_native_edges",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "count",
+     "description": "Native edges."
+    },
+    {
+     "name": "heldout_transformations_in_family",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "lineage",
+     "description": "Held-out transformations present."
+    }
+   ]
+  },
+  "experiment_registry": {
+   "path": "data/derived/tables/experiment_registry.csv",
+   "purpose": "Evaluation registry. Holds only the non-learned dHash sanity baseline (BASE-DHASH-v1); no ORVEX model has been trained.",
+   "phase": "phase1",
+   "columns": [
+    {
+     "name": "experiment_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "dataset_versions",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Dataset versions."
+    },
+    {
+     "name": "split_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Split."
+    },
+    {
+     "name": "label_map_version",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Label map."
+    },
+    {
+     "name": "model_version",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Model."
+    },
+    {
+     "name": "feature_version",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Feature set."
+    },
+    {
+     "name": "metric_name",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Metric."
+    },
+    {
+     "name": "metric_value",
+     "type": "float",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Value."
+    },
+    {
+     "name": "protocol",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Protocol."
+    },
+    {
+     "name": "heldout_policy",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Held-out policy."
+    },
+    {
+     "name": "report_path",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Report."
+    },
+    {
+     "name": "leakage_test_result",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Leakage result."
+    }
+   ]
+  },
+  "duplicate_map": {
+   "path": "data/derived/tables/duplicate_map.csv",
+   "purpose": "Exact/near duplicates and cross-version repeats; canonical record kept.",
+   "phase": "both",
+   "columns": [
+    {
+     "name": "duplicate_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Id."
+    },
+    {
+     "name": "canonical_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "master",
+     "description": "Kept record."
+    },
+    {
+     "name": "duplicate_media_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "master",
+     "description": "Duplicate record."
+    },
+    {
+     "name": "duplicate_type",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "rule",
+     "description": "exact_hash / near_duplicate_perceptual / same_url_across_versions / same_platform_id_across_sources."
+    },
+    {
+     "name": "evidence",
+     "type": "str",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "hash/dHash/URL",
+     "description": "Evidence."
+    },
+    {
+     "name": "resolution",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "What was done."
+    }
+   ]
+  },
+  "group_examples": {
+   "path": "data/derived/tables/group_examples.csv",
+   "purpose": "Groups of 6 videos (4 related family members + 2 distractors) with ground-truth edges (Module 3: compare 5-6 videos).",
+   "phase": "phase1",
+   "columns": [
+    {
+     "name": "group_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Group id."
+    },
+    {
+     "name": "source_family_id",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "root source",
+     "description": "Family of the related members."
+    },
+    {
+     "name": "member_media_ids",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "master/variants",
+     "description": "Pipe-separated members (related + distractors)."
+    },
+    {
+     "name": "n_members",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "count",
+     "description": "Number of members."
+    },
+    {
+     "name": "family_member_ids",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "variants",
+     "description": "Related members."
+    },
+    {
+     "name": "distractor_ids",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "other families in same split",
+     "description": "Unrelated members."
+    },
+    {
+     "name": "truth_edges",
+     "type": "str",
+     "nullable": true,
+     "origin": "c",
+     "lineage": "controlled lineage",
+     "description": "Nearest-selected-ancestor edges parent>child among family members."
+    },
+    {
+     "name": "n_truth_edges",
+     "type": "int",
+     "nullable": false,
+     "origin": "d",
+     "lineage": "count",
+     "description": "Number of edges."
+    },
+    {
+     "name": "split",
+     "type": "str",
+     "nullable": false,
+     "origin": "c",
+     "lineage": "split_manifest",
+     "description": "Split."
+    },
+    {
+     "name": "split_version",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Version."
+    },
+    {
+     "name": "label_origin",
+     "type": "str",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "controlled_lineage."
+    },
+    {
+     "name": "evidence_id",
+     "type": "str",
+     "nullable": true,
+     "origin": "f",
+     "lineage": "ledger",
+     "description": "Evidence."
+    },
+    {
+     "name": "created_utc",
+     "type": "datetime",
+     "nullable": false,
+     "origin": "f",
+     "lineage": "ORVEX",
+     "description": "Time."
+    }
+   ]
+  }
+ }
+}

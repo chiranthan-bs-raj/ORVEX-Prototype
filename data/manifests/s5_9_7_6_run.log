@@ -1,0 +1,160 @@
+variants 1133 passed 1131 edges 301105 features 5187 pairs 13659 groups 110 families 305 access rows 729 payload 17242548620
+[ogg @ 000001e701452a40] read_timestamp() failed in the middle
+[ogg @ 000001e701452a40] read_timestamp() failed in the middle
+[matroska,webm @ 000001e6ed38d5c0] File ended prematurely
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Failed to decode tile data
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Failed to decode tile data
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001e6ebc9b780] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001e6ebc9b780]   Additional information: Keyframe / intra-only frame required to reset decoder state
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+feature hashes filled: 4660 of 4660
+{
+ "threshold_fixed_a_priori": 0.45,
+ "pairs_scored": 9928,
+ "latency_ms_per_pair": 0.0226,
+ "auc_train": 0.8734,
+ "auc_val": 0.8992,
+ "auc_test": 0.8307,
+ "test_negatives_by_hardness": {
+  "easy": 114,
+  "hard": 36
+ },
+ "auc_test_hard_negatives_only": 0.8307,
+ "auc_test_easy_negatives_only": 0.8307,
+ "auc_test_without_heldout_lineage": 0.8486,
+ "auc_test_heldout_lineage_pos_vs_all_neg": 0.7922,
+ "detection_rate_threshold": {
+  "audio_source_only_not_visual_derivation": 0.0,
+  "direct_derivation": 0.823,
+  "edited_version": 0.92,
+  "indirect_derivation": 0.451,
+  "same_family_other": 0.382,
+  "sibling_same_parent": 0.669,
+  "unrelated_distinct_source": 0.0
+ },
+ "direct_derivation_detection_by_transformation": {
+  "audio_mute": {
+   "n": 42,
+   "detected": 0.976,
+   "audio_identical": 0.0
+  },
+  "audio_noise_mix": {
+   "n": 5,
+   "detected": 1.0,
+   "audio_identical": 0.0
+  },
+  "audio_replace": {
+   "n": 55,
+   "detected": 0.964,
+   "audio_identical": 0.0
+  },
+  "caption_burn_in": {
+   "n": 110,
+   "detected": 0.982,
+   "audio_identical": 0.009
+  },
+  "crop_center": {
+   "n": 110,
+   "detected": 0.036,
+   "audio_identical": 0.009
+  },
+  "mirror_color_shift": {
+   "n": 7,
+   "detected": 0.143,
+   "audio_identical": 0.0
+  },
+  "recompress_low": {
+   "n": 220,
+   "detected": 0.986,
+   "audio_identical": 0.014
+  },
+  "reencode_hq": {
+   "n": 55,
+   "detected": 0.964,
+   "audio_identical": 0.0
+  },
+  "reupload_sim": {
+   "n": 7,
+   "detected": 0.857,
+   "audio_identical": 0.0
+  },
+  "speed_change": {
+   "n": 7,
+   "detected": 1.0,
+   "audio_identical": 0.0
+  },
+  "trim_head": {
+   "n": 55,
+   "detected": 0.745,
+   "audio_identical": 0.0
+  },
+  "trim_middle": {
+   "n": 55,
+   "detected": 0.673,
+   "audio_identical": 0.0
+  },
+  "trim_tail": {
+   "n": 55,
+   "detected": 0.8,
+   "audio_identical": 0.0
+  },
+  "watermark_overlay": {
+   "n": 165,
+   "detected": 0.988,
+   "audio_identical": 0.012
+  }
+ },
+ "temporal_start_estimation": {
+  "n": 162,
+  "mean_abs_error_fraction": 0.0758,
+  "within_0_05": 0.704,
+  "first_frame_matched": 0.704,
+  "per_type": {
+   "trim_head": 0.1316,
+   "trim_middle": 0.0935,
+   "trim_tail": 0.0024
+  },
+  "note": "24 sampled frames give ~4% granularity; finer segment bounds need denser frame sampling (computation, not data)"
+ }
+}
+crosswalk rows 252270
+attribution rows 96
+Layer A files set read-only: 729
+checksums lines 1894 payload 17242866281
+Traceback (most recent call last):
+  File "<repo>\scripts\datasets\s6_docs.py", line 165, in <module>
+    json.dump(audit.summary(), open(os.path.join(REP, "acceptance_checks.json"), "w", encoding="utf-8"), indent=1)
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

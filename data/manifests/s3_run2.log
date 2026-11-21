@@ -1,0 +1,28 @@
+media 244148 edges 298645 obs 5675 evidence 102 dups 360 cross-source overlaps 119
+[ogg @ 0000018282377b80] read_timestamp() failed in the middle
+[ogg @ 0000018282377b80] read_timestamp() failed in the middle
+[matroska,webm @ 00000182823794c0] File ended prematurely
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Failed to decode tile data
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Failed to decode tile data
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 00000182809edfc0] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 00000182809edfc0]   Additional information: Keyframe / intra-only frame required to reset decoder state
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229

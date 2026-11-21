@@ -1,0 +1,18 @@
+{
+ "passed_variants": 1131,
+ "readable_by_independent_ffprobe": 1131,
+ "duration_matches_registry": 1131,
+ "carries_controlled_variant_metadata_tag": 1131,
+ "parent_chain_complete": 1131,
+ "roots_eligible": 1131,
+ "audio_variants": 99,
+ "audio_donor_documented_real_eligible": 99,
+ "caption_variants": 110,
+ "caption_variants_with_real_source_text": 110,
+ "run_log_return0_and_passed": 1131,
+ "tool_params_run_recorded": 1131,
+ "failed_variants": 2,
+ "failed_excluded_and_no_file": 2,
+ "leakage_check": true,
+ "heldout_check": true
+}

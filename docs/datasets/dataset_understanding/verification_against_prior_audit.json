@@ -1,0 +1,32 @@
+[
+ {
+  "check": "repository files",
+  "live": 2133,
+  "prior_audit": 2133,
+  "agrees": true
+ },
+ {
+  "check": "variants on disk",
+  "live": 1132,
+  "prior_audit": 1132,
+  "agrees": true
+ },
+ {
+  "check": "Commons files",
+  "live": 96,
+  "prior_audit": 96,
+  "agrees": true
+ },
+ {
+  "check": "pairs total",
+  "live": 13659,
+  "prior_audit": 13659,
+  "agrees": true
+ },
+ {
+  "check": "COVID dataset (Zenodo 4557828) is fetched by s1_fetch_metadata.py",
+  "live": "no",
+  "prior_audit": "not stated",
+  "agrees": false
+ }
+]

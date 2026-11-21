@@ -1,0 +1,39 @@
+
+# ===================================================================== COVID misinformation videos (RW-31)
+def covid_rows():
+    p = os.path.join(X, "covid_misinfo_4557828", "covid-misinfo-videos.csv.gz"); df = pd.read_csv(p, compression="gzip", dtype=str, keep_default_na=False, low_memory=False); rows = []; seen = {}
+    evid("EV-COVID", "source_annotation", "RW-31", "relationship_set", "covid-misinfo-videos.csv.gz", "https://zenodo.org/records/4557828", "all rows", "videos removed by YouTube for false COVID information and the post ids that shared them",
+         "source_asserted", "source_annotation", "Zenodo record + file read (md5 verified)", path=p, perm="cc-by-4.0_metadata")
+    iso = lambda s: s.strip().replace(" ", "T") if s.strip() else ""
+    for _, r in df.iterrows():
+        url = r["youtube_link"]; yt = pid_from_url(url); mid = f"RW-COVID-{yt}"; dup = ""
+        if mid in seen:
+            seen[mid] += 1; dup = mid; mid = f"{mid}-d{seen[dup]}"
+            DUP.append(dict(duplicate_id=f"DUP-{len(DUP) + 1:05d}", canonical_media_id=dup, duplicate_media_id=mid, duplicate_type="same_url_within_source", evidence="repeated youtube_link in the source file",
+                            resolution="canonical = first occurrence; repeat kept for its own metadata"))
+        else: seen[mid] = 1
+        tw = re.findall(r"\d{10,}", r["twitter_post_ids"]); fb = re.findall(r"\d{6,}", r["facebook_post_ids"]); prec = "second_timezone_unstated" if r["published_timestamp"].strip() else "unknown"
+        rows.append(mrow(media_id=mid, source_dataset_id="RW-31", release_version="2021-02-23", native_record_id=yt, native_media_id=url, platform="youtube", platform_media_id=yt, source_url=url, canonical_url=canon(url),
+                         title=r["video_title"][:300], description_caption=r["video_description"][:500], publisher_account_id=r["channel_id"], published_time_utc=iso(r["published_timestamp"]), time_precision=prec,
+                         access_status="metadata_only", rights_status="media_not_provided_by_source", license="cc-by-4.0 (metadata)", license_url="https://creativecommons.org/licenses/by/4.0/", attribution="Knuutila, Zenodo 4557828",
+                         native_misleading_label="removed_by_youtube_for_false_information (dataset definition)", normalized_misleading_status="removed_by_platform_for_false_information_per_source",
+                         annotation_status="source_annotation", duplicate_of_media_id=dup, missingness_note="media not provided; timestamps/channel only for part of the videos"))
+        pa = hashlib.sha256(("orvex-pseudonym-v1" + r["channel_id"]).encode()).hexdigest()[:12] if r["channel_id"] else ""
+        eng = f"fb_reactions={r['facebook_graph_reactions']};fb_comments={r['facebook_graph_comments']};fb_shares={r['facebook_graph_shares']};views={r['view_count']};n_twitter_posts={len(tw)};n_facebook_posts={len(fb)}"
+        tag = mid[len("RW-COVID-"):]
+        OBS.append(dict(observation_id=f"OBS-COVID-{tag}-pub", observation_type="publish", media_id=mid, platform="youtube", platform_post_id=yt, post_url=url, account_id_pseudonym=pa,
+                        account_id_source_field="channel_id" if pa else "", publish_time_utc=iso(r["published_timestamp"]), time_precision=prec, engagement_refs=eng, metadata_source="RW-31", collection_method="dataset_file",
+                        access_status="metadata_only", evidence_id="EV-COVID", limitations="publish time/channel present only for part of the videos"))
+        if r["removal_timestamp"].strip():
+            OBS.append(dict(observation_id=f"OBS-COVID-{tag}-rem", observation_type="removal", media_id=mid, platform="youtube", platform_post_id=yt, post_url=url, observation_time_utc=iso(r["removal_timestamp"]),
+                            time_precision="second_timezone_unstated", metadata_source="RW-31", collection_method="dataset_file", access_status="metadata_only", evidence_id="EV-COVID",
+                            limitations="removal time as stated by the dataset authors (when YouTube removed the video)"))
+        for t in tw:
+            ms = (int(t) >> 22) + 1288834974657; ts = datetime.datetime.fromtimestamp(ms / 1000, datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            OBS.append(dict(observation_id=f"OBS-COVID-{tag}-tw{t}", observation_type="share_reference", media_id=mid, platform="twitter", platform_post_id=t, post_url=f"https://twitter.com/i/web/status/{t}", publish_time_utc=ts,
+                            time_precision="second", metadata_source="RW-31", collection_method="dataset_file", access_status="metadata_only", evidence_id="EV-COVID",
+                            limitations="time derived from the tweet-id snowflake; sharing account not provided in the source"))
+        for f in fb:
+            OBS.append(dict(observation_id=f"OBS-COVID-{tag}-fb{f}", observation_type="share_reference", media_id=mid, platform="facebook", platform_post_id=f, time_precision="unknown", metadata_source="RW-31",
+                            collection_method="dataset_file", access_status="metadata_only", evidence_id="EV-COVID", limitations="only a post id is provided: no URL, account or time"))
+    return rows

@@ -1,0 +1,63 @@
+media 252270 edges 298645 obs 352702 evidence 103 dups 378 cross-source overlaps 119
+[ogg @ 0000023d5bb15740] read_timestamp() failed in the middle
+[ogg @ 0000023d5bb15740] read_timestamp() failed in the middle
+[matroska,webm @ 0000023d5bb176c0] File ended prematurely
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Failed to decode tile data
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Failed to decode tile data
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 0000023d525e9700] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 0000023d525e9700]   Additional information: Keyframe / intra-only frame required to reset decoder state
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+variants 1133 passed 1131 edges 299875 features 5187 pairs 13557 groups 110 families 305 access rows 729 payload 17199084906
+[ogg @ 000001df86daf3c0] read_timestamp() failed in the middle
+[ogg @ 000001df86daf3c0] read_timestamp() failed in the middle
+[matroska,webm @ 000001df88c71100] File ended prematurely
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Failed to decode tile data
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Failed to decode tile data
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+[libaom-av1 @ 000001df738d7740] Failed to decode frame: Corrupt frame detected
+[libaom-av1 @ 000001df738d7740]   Additional information: Keyframe / intra-only frame required to reset decoder state
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+Truncating packet of size 230 to 229
+feature hashes filled: 4660 of 4660
+crosswalk rows 252270
+attribution rows 96
+Layer A files set read-only: 729
+checksums lines 1892 payload 17241360743
+docs written; checks failing: ['K29_attribution_complete', 'K30_manifests_present', 'K32_covid_dataset']
+matrix: {'PASS': 26, 'PARTIAL': 10, 'BLOCKED': 2, 'FAIL': 2}

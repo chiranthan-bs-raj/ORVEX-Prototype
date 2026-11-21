@@ -1,0 +1,463 @@
+{
+ "usage_summary": {
+  "DS-001": {
+   "hits": 19,
+   "functions": 13,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/common.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s2_collect_media.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py"
+   ],
+   "writers": 1,
+   "readers": 0
+  },
+  "DS-002": {
+   "hits": 6,
+   "functions": 6,
+   "files": [
+    "scripts/datasets/s2_collect_media.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s4_variants.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py"
+   ],
+   "writers": 0,
+   "readers": 4
+  },
+  "DS-003": {
+   "hits": 34,
+   "functions": 12,
+   "files": [
+    "scripts/datasets/common.py",
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s2_collect_media.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py"
+   ],
+   "writers": 1,
+   "readers": 3
+  },
+  "DS-004": {
+   "hits": 9,
+   "functions": 4,
+   "files": [
+    "scripts/datasets/candidates.py",
+    "scripts/datasets/s2_collect_media.py",
+    "scripts/datasets/s6_docs.py"
+   ],
+   "writers": 1,
+   "readers": 0
+  },
+  "DS-005": {
+   "hits": 7,
+   "functions": 4,
+   "files": [
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s2_collect_media.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py"
+   ],
+   "writers": 1,
+   "readers": 3
+  },
+  "DS-006": {
+   "hits": 10,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py"
+   ],
+   "writers": 0,
+   "readers": 0
+  },
+  "DS-007": {
+   "hits": 6,
+   "functions": 5,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py"
+   ],
+   "writers": 0,
+   "readers": 0
+  },
+  "DS-008": {
+   "hits": 6,
+   "functions": 5,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py"
+   ],
+   "writers": 0,
+   "readers": 0
+  },
+  "DS-009": {
+   "hits": 10,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py"
+   ],
+   "writers": 0,
+   "readers": 1
+  },
+  "DS-010": {
+   "hits": 11,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/candidates.py",
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/s1_fetch_metadata.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py"
+   ],
+   "writers": 0,
+   "readers": 1
+  },
+  "DS-011": {
+   "hits": 8,
+   "functions": 5,
+   "files": [
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/update_report.py"
+   ],
+   "writers": 0,
+   "readers": 1
+  },
+  "DS-012": {
+   "hits": 3,
+   "functions": 2,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s1_fetch_metadata.py"
+   ],
+   "writers": 1,
+   "readers": 0
+  },
+  "DS-013": {
+   "hits": 15,
+   "functions": 9,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/common.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s4_variants.py",
+    "scripts/datasets/s4b_purge_ineligible.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py",
+    "scripts/datasets/s8_necessity_audit.py"
+   ],
+   "writers": 1,
+   "readers": 0
+  },
+  "DS-014": {
+   "hits": 25,
+   "functions": 8,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/s9_feature_baseline.py",
+    "scripts/datasets/schema.py",
+    "tests/test_dataset_package.py"
+   ],
+   "writers": 1,
+   "readers": 2
+  },
+  "DS-015": {
+   "hits": 7,
+   "functions": 5,
+   "files": [
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 1,
+   "readers": 1
+  },
+  "DS-016": {
+   "hits": 40,
+   "functions": 12,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s4_variants.py",
+    "scripts/datasets/s4b_purge_ineligible.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py",
+    "scripts/datasets/update_report.py",
+    "tests/test_dataset_package.py"
+   ],
+   "writers": 1,
+   "readers": 5
+  },
+  "DS-017": {
+   "hits": 22,
+   "functions": 8,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/patch_round6.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 2,
+   "readers": 4
+  },
+  "DS-018": {
+   "hits": 17,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py",
+    "scripts/datasets/update_report.py"
+   ],
+   "writers": 1,
+   "readers": 2
+  },
+  "DS-019": {
+   "hits": 20,
+   "functions": 9,
+   "files": [
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/patch_round6.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py",
+    "scripts/datasets/update_report.py"
+   ],
+   "writers": 2,
+   "readers": 3
+  },
+  "DS-020": {
+   "hits": 16,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s5b_feature_hashes.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 2,
+   "readers": 2
+  },
+  "DS-021": {
+   "hits": 15,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round2.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s5b_feature_hashes.py",
+    "scripts/datasets/s9_feature_baseline.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 1,
+   "readers": 2
+  },
+  "DS-022": {
+   "hits": 5,
+   "functions": 4,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s5b_feature_hashes.py",
+    "scripts/datasets/s9_feature_baseline.py"
+   ],
+   "writers": 1,
+   "readers": 2
+  },
+  "DS-023": {
+   "hits": 15,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/s9_feature_baseline.py",
+    "scripts/datasets/schema.py",
+    "scripts/datasets/update_report2.py"
+   ],
+   "writers": 1,
+   "readers": 2
+  },
+  "DS-024": {
+   "hits": 7,
+   "functions": 4,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 1,
+   "readers": 1
+  },
+  "DS-025": {
+   "hits": 14,
+   "functions": 6,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py",
+    "scripts/datasets/update_report2.py"
+   ],
+   "writers": 1,
+   "readers": 1
+  },
+  "DS-026": {
+   "hits": 13,
+   "functions": 7,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/candidates.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 1,
+   "readers": 2
+  },
+  "DS-027": {
+   "hits": 18,
+   "functions": 6,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s3_normalize.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 1,
+   "readers": 1
+  },
+  "DS-028": {
+   "hits": 16,
+   "functions": 9,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/common.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/s2_collect_media.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 4,
+   "readers": 2
+  },
+  "DS-029": {
+   "hits": 7,
+   "functions": 5,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/schema.py"
+   ],
+   "writers": 1,
+   "readers": 1
+  },
+  "DS-030": {
+   "hits": 15,
+   "functions": 9,
+   "files": [
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/patch_round5.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/s9_feature_baseline.py",
+    "scripts/datasets/schema.py",
+    "scripts/datasets/update_report2.py"
+   ],
+   "writers": 2,
+   "readers": 1
+  },
+  "DS-031": {
+   "hits": 21,
+   "functions": 9,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/patch_round3.py",
+    "scripts/datasets/patch_round4.py",
+    "scripts/datasets/patch_round6.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py",
+    "scripts/datasets/s8_necessity_audit.py",
+    "scripts/datasets/s9_feature_baseline.py",
+    "scripts/datasets/update_report.py"
+   ],
+   "writers": 2,
+   "readers": 2
+  },
+  "DS-032": {
+   "hits": 13,
+   "functions": 12,
+   "files": [
+    "scripts/datasets/audit.py",
+    "scripts/datasets/common.py",
+    "scripts/datasets/patch_round4.py",
+    "scripts/datasets/patch_round6.py",
+    "scripts/datasets/s4_variants.py",
+    "scripts/datasets/s4b_purge_ineligible.py",
+    "scripts/datasets/s5_features_pairs_splits.py",
+    "scripts/datasets/s6_docs.py",
+    "scripts/datasets/s7_manifests.py"
+   ],
+   "writers": 3,
+   "readers": 0
+  }
+ }
+}

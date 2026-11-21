@@ -1,0 +1,20 @@
+﻿kind,name,bytes,GB_decimal,GiB,allocation_bytes,within_allocation,source
+final_category,real-world raw metadata,66260147,0.066,0.062,400000000,yes,measured by du-equivalent walk
+final_category,real-world media: Commons,1687143702,1.687,1.571,3000000000,yes,measured by du-equivalent walk
+final_category,real-world media: ANAKIN subset,2521092381,2.521,2.348,3000000000,yes,measured by du-equivalent walk
+final_category,controlled variants (media),12500690021,12.501,11.642,14000000000,yes,measured by du-equivalent walk
+final_category,derived tables,419190940,0.419,0.39,1000000000,yes,measured by du-equivalent walk
+final_category,derived features,1350267,0.001,0.001,0,yes,measured by du-equivalent walk
+final_category,derived splits,72085,0.0,0.0,0,yes,measured by du-equivalent walk
+final_category,manifests/logs/build,45909957,0.046,0.043,0,yes,measured by du-equivalent walk
+final_category,reports,32207,0.0,0.0,0,yes,measured by du-equivalent walk
+final_total,dataset payload (all of data/),17241741707,17.242,16.058,30000000000,yes,"cap 30 GB, target 27 GB, stop 29 GB"
+stage_measurement,s2_run.log: payload before: 61890011,61890011,0.062,0.058,,yes,printed by the script in s2_run.log
+stage_measurement,s2_run.log: payload after: 4270654144,4270654144,4.271,3.977,,yes,printed by the script in s2_run.log
+stage_measurement,s4_run.log: eligible real-world sources: 59 payload 4552449474,4552449474,4.552,4.24,,yes,printed by the script in s4_run.log
+stage_measurement,s4_run.log: variants 1203 payload 17201885508,17201885508,17.202,16.021,,yes,printed by the script in s4_run.log
+stage_measurement,s456_run.log: eligible real-world sources: 55 payload 15244226753,15244226753,15.244,14.197,,yes,printed by the script in s456_run.log
+stage_measurement,s456_run.log: variants 1133 payload 17067133087,17067133087,17.067,15.895,,yes,printed by the script in s456_run.log
+stage_measurement,s456_run.log: variants 1133 passed 1131 edges 299875 features 5187 pairs 1,17067862959,17.068,15.896,,yes,printed by the script in s456_run.log
+stage_measurement,s356_run.log: after features/pairs stage,17188640497,17.189,16.008,,yes,printed by the script in s356_run.log
+peak_recorded,largest recorded payload measurement,17241741707,17.242,16.058,30000000000,yes,max of stage measurements (definition: decimal bytes under data/)

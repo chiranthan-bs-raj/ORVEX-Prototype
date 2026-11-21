@@ -1,0 +1,656 @@
+{
+ "audit_date": "2026-10-27",
+ "repository": "<repo>",
+ "counts": {
+  "audit_ids_total": 40,
+  "data_bearing_datasets": 33,
+  "non_dataset_assets": 7,
+  "verified": 27,
+  "metadata_only": 6,
+  "unverified": 1,
+  "used_by_code": 31,
+  "referenced_or_unused": 2,
+  "used_for_training": 0,
+  "used_for_evaluation": 8,
+  "used_by_runtime": 0,
+  "derived_datasets": 20,
+  "structured_files": 64,
+  "columns_or_fields": 1269,
+  "findings": 24,
+  "requirement_rows": 34,
+  "lineage_rows": 1151,
+  "usage_rows": 227
+ },
+ "media": {
+  "commons_files": 96,
+  "commons_usable": 55,
+  "anakin_pairs": 250,
+  "variants_on_disk": 1132,
+  "variants_passed": 1131,
+  "variants_failed": 2,
+  "pairs_in_splits": 9928,
+  "pairs_total": 13659
+ },
+ "storage": {
+  "data_bytes": 17241741313,
+  "repo_bytes": 17927214201,
+  "limit_bytes": 30000000000,
+  "remaining_bytes": 12758258687
+ },
+ "datasets": [
+  {
+   "id": "DS-001",
+   "name": "Wikimedia Commons CC/PD video originals",
+   "category": "Real-world media (naturally occurring, user-uploaded)",
+   "status": "Physically present; Verified and usable (96 probed readable); Integrated into pipeline (preprocessing); Experimentally evaluated (via features in baseline)",
+   "bytes": 1687143702,
+   "files": 96,
+   "actual_usage": "Preprocessing use verified; Evaluation use verified (features -> baseline)",
+   "necessity": "Essential",
+   "license": "per-file CC/PD: {'CC BY-SA 4.0': 35, 'Public domain': 25, 'CC BY 4.0': 12, 'CC BY-SA 3.0': 8, 'CC BY 3.0': 7, 'CC0': 6, 'CC BY 2.0': 1, 'CC BY-SA 2.0': 1, 'CC BY-SA 3.0 nl': 1}"
+  },
+  {
+   "id": "DS-002",
+   "name": "Commons source metadata (candidate records)",
+   "category": "Source metadata (API-derived + ORVEX search fields)",
+   "status": "Physically present; Verified and usable; Integrated into pipeline",
+   "bytes": 139714,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Essential",
+   "license": "per-file (same as DS-001)"
+  },
+  {
+   "id": "DS-003",
+   "name": "ANAKIN subset: trimmed + edited videos",
+   "category": "Real-world human-edited media (commissioned edits of real Vimeo clips)",
+   "status": "Physically present; Verified and usable; Integrated into pipeline (preprocessing, features); Experimentally evaluated (baseline pairs)",
+   "bytes": 2392113142,
+   "files": 500,
+   "actual_usage": "Preprocessing use verified; Evaluation use verified (baseline pairs)",
+   "necessity": "Useful and justified",
+   "license": "cc-by-4.0 (HF dataset card snapshot); underlying Vimeo rights not verified"
+  },
+  {
+   "id": "DS-004",
+   "name": "ANAKIN subset: edit masks",
+   "category": "Real-world annotations",
+   "status": "Physically present; Downloaded but unverified (zip integrity not checked); NOT integrated",
+   "bytes": 128979239,
+   "files": 89,
+   "actual_usage": "Reference only (downloaded by s2, never read)",
+   "necessity": "Underutilized",
+   "license": "cc-by-4.0 (card)"
+  },
+  {
+   "id": "DS-005",
+   "name": "ANAKIN metadata and official listing",
+   "category": "Source metadata and annotations",
+   "status": "Physically present; Verified and usable; Integrated into pipeline",
+   "bytes": 1033853,
+   "files": 5,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Essential",
+   "license": "cc-by-4.0 (card)"
+  },
+  {
+   "id": "DS-006",
+   "name": "InVID Fake Video Corpus 2018 (v3): URLs and labels",
+   "category": "Real-world source metadata (naturally circulating videos; media NOT local)",
+   "status": "Metadata only; Verified and usable (metadata); Integrated into pipeline (preprocessing)",
+   "bytes": 650024,
+   "files": 5,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Conditionally useful",
+   "license": "cc-by-4.0 (Zenodo snapshot; annotations)"
+  },
+  {
+   "id": "DS-007",
+   "name": "InVID Fake Video Corpus v2.0: URLs, labels, manipulation types",
+   "category": "Real-world source metadata (media NOT local)",
+   "status": "Metadata only; Verified and usable (metadata); Integrated into pipeline (preprocessing)",
+   "bytes": 74758,
+   "files": 4,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Conditionally useful",
+   "license": "cc-by-4.0 (Zenodo snapshot)"
+  },
+  {
+   "id": "DS-008",
+   "name": "InVID Fake Video Corpus v1.0: URLs and annotations",
+   "category": "Real-world source metadata (media NOT local)",
+   "status": "Metadata only; Verified; Integrated (preprocessing; superseded records only mapped as duplicates)",
+   "bytes": 27904,
+   "files": 3,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Redundant",
+   "license": "cc-by-4.0 (Zenodo snapshot)"
+  },
+  {
+   "id": "DS-009",
+   "name": "FIVR-200K: YouTube ids, events, relation annotations",
+   "category": "Real-world source metadata (media NOT local)",
+   "status": "Metadata only; Verified and usable (metadata); Integrated into pipeline (preprocessing)",
+   "bytes": 17873355,
+   "files": 5,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Conditionally useful",
+   "license": "cc-by-4.0 (Zenodo snapshot)"
+  },
+  {
+   "id": "DS-010",
+   "name": "VCSL: video URLs, copied-segment labels, pair/split files",
+   "category": "Real-world source metadata (media NOT local)",
+   "status": "Metadata only; Verified and usable (metadata); Integrated into pipeline (preprocessing)",
+   "bytes": 42201384,
+   "files": 9,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Conditionally useful",
+   "license": "code: MIT License; dataset licence NOT STATED in the repository snapshot"
+  },
+  {
+   "id": "DS-011",
+   "name": "COVID-related misinformation videos and their spread (RW-31)",
+   "category": "Real-world source metadata (media NOT local)",
+   "status": "Metadata only; Verified and usable (metadata); Integrated into pipeline (preprocessing)",
+   "bytes": 4198098,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Useful and justified",
+   "license": "cc-by-4.0 (Zenodo snapshot; metadata)"
+  },
+  {
+   "id": "DS-012",
+   "name": "Official record snapshots (Zenodo API, GitHub READMEs/licence)",
+   "category": "Source metadata",
+   "status": "Physically present; Verified (md5 checked for archives)",
+   "bytes": 61057,
+   "files": 11,
+   "actual_usage": "Preprocessing use verified (provenance/licence evidence read by audit and s1)",
+   "necessity": "Essential",
+   "license": "mixed (API record snapshots)"
+  },
+  {
+   "id": "DS-013",
+   "name": "Controlled variant media",
+   "category": "Controlled variants (derived from real-world media)",
+   "status": "Physically present; Verified and usable (all probed readable); Processed or derived; Integrated into pipeline (features, pairs); Experimentally evaluated (baseline)",
+   "bytes": 12500690021,
+   "files": 1132,
+   "actual_usage": "Preprocessing use verified; Evaluation use verified (baseline)",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-014",
+   "name": "Controlled variant registry",
+   "category": "Created table (lineage ground truth)",
+   "status": "Physically present; Verified and usable; Processed or derived; Integrated into pipeline; Experimentally evaluated (baseline)",
+   "bytes": 1094515,
+   "files": 1,
+   "actual_usage": "Preprocessing + Evaluation use verified",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-015",
+   "name": "Transformation run log",
+   "category": "Created table (processing log)",
+   "status": "Physically present; Verified; Processed or derived; Integrated (audit/tests)",
+   "bytes": 954337,
+   "files": 1,
+   "actual_usage": "Test-only use (audit/tests) plus s4 writer",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-016",
+   "name": "Real-world media master",
+   "category": "Created table (normalised real-world records; no variants)",
+   "status": "Physically present; Verified and usable; Processed or derived; Integrated into pipeline",
+   "bytes": 148756771,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-017",
+   "name": "Media relationship edges",
+   "category": "Created table (native relations + controlled lineage)",
+   "status": "Physically present; Verified and usable; Processed or derived; Integrated into pipeline",
+   "bytes": 149867390,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-018",
+   "name": "Platform observations",
+   "category": "Created table (real post/upload/removal observations)",
+   "status": "Physically present; Verified; Processed or derived; Integrated (audit/tests only downstream)",
+   "bytes": 110755040,
+   "files": 1,
+   "actual_usage": "Test/audit use only downstream of s3",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-019",
+   "name": "Evidence ledger",
+   "category": "Created table (evidence records)",
+   "status": "Physically present; Verified; Integrated (referenced by edges/pairs)",
+   "bytes": 670524,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-020",
+   "name": "Feature manifest",
+   "category": "Created table (feature index)",
+   "status": "Physically present; Verified; Processed or derived; Experimentally evaluated",
+   "bytes": 2252894,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-021",
+   "name": "Visual 24-frame dHash features",
+   "category": "Derived feature (perceptual hash)",
+   "status": "Physically present; Processed or derived; Integrated into pipeline; Experimentally evaluated (baseline)",
+   "bytes": 1133311,
+   "files": 1,
+   "actual_usage": "Evaluation use verified (baseline)",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-022",
+   "name": "Audio fingerprint features",
+   "category": "Derived feature (audio md5 + envelope)",
+   "status": "Physically present; Processed or derived; Integrated (pairs baseline reads md5)",
+   "bytes": 216956,
+   "files": 1,
+   "actual_usage": "Evaluation use verified (baseline)",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-023",
+   "name": "Training pairs",
+   "category": "Created table (labelled pairs)",
+   "status": "Physically present; Verified; Processed or derived; Experimentally evaluated (baseline scoring)",
+   "bytes": 4719493,
+   "files": 1,
+   "actual_usage": "Evaluation use verified (baseline)",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-024",
+   "name": "Group examples (5-6 videos)",
+   "category": "Created table",
+   "status": "Physically present; Verified; Processed; NOT yet consumed by any experiment",
+   "bytes": 37349,
+   "files": 1,
+   "actual_usage": "Test/audit use only (no experiment)",
+   "necessity": "Underutilized",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-025",
+   "name": "Split manifest (split-v2)",
+   "category": "Created table",
+   "status": "Physically present; Verified; Integrated (variants, pairs, groups use it)",
+   "bytes": 72085,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified (pairs/variants splits)",
+   "necessity": "Essential",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-026",
+   "name": "Duplicate map",
+   "category": "Created table",
+   "status": "Physically present; Verified; Integrated (usable flags)",
+   "bytes": 78429,
+   "files": 1,
+   "actual_usage": "Test/audit use only downstream of s3",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-027",
+   "name": "Source registry",
+   "category": "Created table (dataset census)",
+   "status": "Physically present; Verified; Integrated (audit/tests)",
+   "bytes": 23226,
+   "files": 1,
+   "actual_usage": "Test/audit use only downstream of s3",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-028",
+   "name": "Download/access attempt log",
+   "category": "Created table (access log)",
+   "status": "Physically present; Verified; Integrated (audit/tests)",
+   "bytes": 215252,
+   "files": 1,
+   "actual_usage": "Preprocessing use verified (writer) / Test-audit use",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-029",
+   "name": "Campaign candidate clusters",
+   "category": "Created table (empty by design)",
+   "status": "Physically present but EMPTY (0 records); Required but unavailable",
+   "bytes": 219,
+   "files": 1,
+   "actual_usage": "Test/audit use only (empty)",
+   "necessity": "Required but unavailable",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-030",
+   "name": "Experiment registry",
+   "category": "Created table (experiment results)",
+   "status": "Physically present; Experimentally evaluated (baseline BASE-DHASH-v1)",
+   "bytes": 3979,
+   "files": 1,
+   "actual_usage": "Evaluation use verified (written by s9)",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-031",
+   "name": "Manifests (checksums, crosswalk, attribution, selection plan, storage budget, protocol)",
+   "category": "Created manifests",
+   "status": "Physically present; Verified (checksums re-checked in this audit); Integrated (tests)",
+   "bytes": 41965067,
+   "files": 6,
+   "actual_usage": "Test/audit use",
+   "necessity": "Useful and justified",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-032",
+   "name": "Build intermediates and run logs",
+   "category": "Processing artefacts",
+   "status": "Physically present; Processed; Used for resume only",
+   "bytes": 3706024,
+   "files": 72,
+   "actual_usage": "Pipeline resume use verified",
+   "necessity": "Redundant",
+   "license": "N/A (ORVEX-generated; inherits source licence)"
+  },
+  {
+   "id": "DS-033",
+   "name": "Acceptance and QA report artefacts",
+   "category": "Generated reports",
+   "status": "Physically present; Verified",
+   "bytes": 32201,
+   "files": 3,
+   "actual_usage": "N/A",
+   "necessity": "Useful and justified",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-034",
+   "name": "Dataset documentation corpus (docs/datasets, incl. necessity_audit)",
+   "category": "Documentation (not a dataset)",
+   "status": "Physically present; NOT a dataset",
+   "bytes": 412378,
+   "files": 21,
+   "actual_usage": "N/A",
+   "necessity": "Useful and justified",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-035",
+   "name": "ORVEX_Literature corpus (35 PDFs, text, review workbook)",
+   "category": "Research literature (not ORVEX data)",
+   "status": "Physically present; Not used by any data pipeline",
+   "bytes": 240494329,
+   "files": 77,
+   "actual_usage": "Documented/reference",
+   "necessity": "Unused",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-036",
+   "name": "ORVEX_Complete_Project_Specification.pdf",
+   "category": "Authoritative specification",
+   "status": "Physically present; Read",
+   "bytes": 251692,
+   "files": 1,
+   "actual_usage": "Documented/reference",
+   "necessity": "Essential",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-037",
+   "name": "LOOP-MIND novelty verification workbook",
+   "category": "Unrelated asset",
+   "status": "Physically present; Unrelated to ORVEX data",
+   "bytes": 20779,
+   "files": 1,
+   "actual_usage": "N/A",
+   "necessity": "Unsuitable for intended use",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-038",
+   "name": "Tools: portable FFmpeg 9.0.2",
+   "category": "Software (not data)",
+   "status": "Physically present; Used by pipeline",
+   "bytes": 443989875,
+   "files": 47,
+   "actual_usage": "N/A",
+   "necessity": "Useful and justified",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-039",
+   "name": "Pipeline code and tests",
+   "category": "Code (not data)",
+   "status": "Physically present",
+   "bytes": 303686,
+   "files": 25,
+   "actual_usage": "N/A",
+   "necessity": "Useful and justified",
+   "license": "N/A"
+  },
+  {
+   "id": "DS-040",
+   "name": "Root-level miscellaneous files",
+   "category": "Housekeeping",
+   "status": "Physically present",
+   "bytes": 149,
+   "files": 2,
+   "actual_usage": "N/A",
+   "necessity": "Unused",
+   "license": "N/A"
+  }
+ ],
+ "findings": [
+  {
+   "id": "F-001",
+   "severity": "High",
+   "dataset": "all"
+  },
+  {
+   "id": "F-002",
+   "severity": "Medium",
+   "dataset": "DS-013/DS-014"
+  },
+  {
+   "id": "F-003",
+   "severity": "Medium",
+   "dataset": "DS-009/DS-017"
+  },
+  {
+   "id": "F-004",
+   "severity": "Medium",
+   "dataset": "DS-009/DS-017"
+  },
+  {
+   "id": "F-005",
+   "severity": "Medium",
+   "dataset": "DS-006/DS-016"
+  },
+  {
+   "id": "F-006",
+   "severity": "Medium",
+   "dataset": "DS-006"
+  },
+  {
+   "id": "F-007",
+   "severity": "Medium",
+   "dataset": "DS-004"
+  },
+  {
+   "id": "F-008",
+   "severity": "Medium",
+   "dataset": "DS-023/DS-025"
+  },
+  {
+   "id": "F-009",
+   "severity": "Medium",
+   "dataset": "DS-023"
+  },
+  {
+   "id": "F-010",
+   "severity": "Medium",
+   "dataset": "DS-010/DS-003/DS-001"
+  },
+  {
+   "id": "F-011",
+   "severity": "Medium",
+   "dataset": "repository"
+  },
+  {
+   "id": "F-012",
+   "severity": "Medium",
+   "dataset": "repository"
+  },
+  {
+   "id": "F-013",
+   "severity": "Low",
+   "dataset": "repository"
+  },
+  {
+   "id": "F-014",
+   "severity": "Low",
+   "dataset": "DS-006"
+  },
+  {
+   "id": "F-015",
+   "severity": "Low",
+   "dataset": "DS-005"
+  },
+  {
+   "id": "F-016",
+   "severity": "Low",
+   "dataset": "DS-010"
+  },
+  {
+   "id": "F-017",
+   "severity": "Low",
+   "dataset": "DS-012"
+  },
+  {
+   "id": "F-018",
+   "severity": "Low",
+   "dataset": "DS-024/DS-018/DS-026/DS-027/DS-028/DS-029"
+  },
+  {
+   "id": "F-019",
+   "severity": "Low",
+   "dataset": "DS-019"
+  },
+  {
+   "id": "F-020",
+   "severity": "Info",
+   "dataset": "DS-001"
+  },
+  {
+   "id": "F-021",
+   "severity": "Info",
+   "dataset": "DS-011"
+  },
+  {
+   "id": "F-022",
+   "severity": "Info",
+   "dataset": "all tables"
+  },
+  {
+   "id": "F-023",
+   "severity": "Info",
+   "dataset": "docs"
+  },
+  {
+   "id": "F-024",
+   "severity": "Info",
+   "dataset": "docs"
+  }
+ ],
+ "outputs": [
+  "ORVEX_COMPLETE_DATASET_AUDIT.md",
+  "audit_consistency_check.json",
+  "dataset_audit_findings.csv",
+  "dataset_audit_findings.md",
+  "dataset_audit_summary.json",
+  "dataset_column_dictionary.csv",
+  "dataset_implementation_usage.csv",
+  "dataset_inventory.csv",
+  "dataset_licensing_and_access.csv",
+  "dataset_lineage.csv",
+  "dataset_necessity_assessment.csv",
+  "dataset_overlap_matrix.csv",
+  "dataset_quality_and_split_audit.md",
+  "dataset_requirement_matrix.csv",
+  "dataset_schema_report.md",
+  "dataset_storage_audit.md",
+  "experiment_dataset_mapping.csv",
+  "media_probe_results.csv",
+  "module_data_coverage_matrix.csv",
+  "repository_file_manifest.csv"
+ ],
+ "baseline": {
+  "auc_test": 0.8307,
+  "pairs_scored": 9928
+ },
+ "unchanged_project_check": {
+  "existing_files_changed": 0,
+  "changed": [],
+  "new_files_outside_audit": []
+ },
+ "specification": {
+  "pages": 13,
+  "sha256": "55cbb2d8118d992d",
+  "modules_found": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "phases": [
+   true,
+   true
+  ],
+  "sections_10_2_to_10_4": true,
+  "other_spec_files": []
+ }
+}
