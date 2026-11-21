@@ -7,7 +7,7 @@ Hackathon submission for **IDEA//FORGE Online Hackathon** (capstone project PW_2
 | | |
 |---|---|
 | **Live demo** | {{SPACE_URL}} |
-| **GitHub** | {{GITHUB_URL}} |
+| **GitHub** | https://github.com/chiranthan-bs-raj/ORVEX-Prototype |
 | **Videos and large tables** | {{DATASET_URL}} (Hugging Face dataset) |
 | **Demo sign-in** | `demo.investigator@orvex.local` / `OrvexDemo!2026` (public demo account, no real data) |
 
