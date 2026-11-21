@@ -1,0 +1,7 @@
+# Caddy gets and renews a free Let's Encrypt certificate for SITE_ADDRESS (for example 203.0.113.10.sslip.io) and forwards to the app.
+{$SITE_ADDRESS} {
+	encode gzip
+	reverse_proxy orvex:7860 {
+		flush_interval -1
+	}
+}

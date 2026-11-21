@@ -1,0 +1,32 @@
+# Always-free VM deployment (e.g. Oracle Cloud Ampere A1, Ubuntu): the app container + Caddy for automatic HTTPS.
+# Usage (on the VM, in this folder):   cp env.example .env   # fill in SITE_ADDRESS and ORVEX_SECRET   then   docker compose up -d --build
+services:
+  orvex:
+    build:
+      context: ..
+    restart: unless-stopped
+    environment:
+      ORVEX_MEDIA_BASE: ${ORVEX_MEDIA_BASE:-https://huggingface.co/datasets/chiranthanbsraj/ORVEX-Prototype-Media/resolve/main}
+      ORVEX_SECRET: ${ORVEX_SECRET:?set ORVEX_SECRET in .env}
+      ORVEX_APP_DIR: /var/lib/orvex          # persistent volume: users, investigations, reviews survive restarts
+      PORT: "7860"
+    volumes:
+      - orvex-data:/var/lib/orvex
+    expose:
+      - "7860"
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - orvex
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?set SITE_ADDRESS in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+volumes:
+  orvex-data:
+  caddy-data:

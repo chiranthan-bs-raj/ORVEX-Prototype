@@ -18,7 +18,7 @@ COPY --chown=app:app data ./data
 COPY --chown=app:app docs/datasets ./docs/datasets
 COPY --chown=app:app start.sh ./start.sh
 COPY --from=web --chown=app:app /w/dist ./frontend/dist
-RUN chmod +x start.sh && mkdir -p /tmp/orvex_app && chown app:app /tmp/orvex_app /app/data/derived/tables
+RUN chmod +x start.sh && mkdir -p /tmp/orvex_app /var/lib/orvex && chown app:app /tmp/orvex_app /var/lib/orvex /app/data/derived/tables
 ENV ORVEX_APP_DIR=/tmp/orvex_app PORT=7860 PYTHONUNBUFFERED=1
 USER app
 EXPOSE 7860
