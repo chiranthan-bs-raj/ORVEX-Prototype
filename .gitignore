@@ -1,0 +1,25 @@
+# secrets and local state
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials*
+data/app/
+
+# regenerated or downloaded (see scripts/fetch_data.py)
+node_modules/
+frontend/dist/
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+tools/
+*.part
+
+# videos live in the Hugging Face dataset, not in Git
+data/real_world/media/
+data/controlled_variants/media/
+data/derived/tables/media_relationship_edges.csv
+data/derived/tables/real_world_media_master.csv
+data/derived/tables/platform_observations.csv

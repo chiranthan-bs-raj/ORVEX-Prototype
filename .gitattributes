@@ -1,0 +1,7 @@
+* text=auto
+*.sh text eol=lf
+Dockerfile text eol=lf
+# dataset files are checksummed: keep their bytes exactly as generated (no line-ending conversion)
+data/** -text
+docs/datasets/**/*.csv -text
+docs/datasets/**/*.json -text

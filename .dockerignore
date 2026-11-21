@@ -1,0 +1,10 @@
+.git
+node_modules
+frontend/node_modules
+frontend/dist
+**/__pycache__
+.env
+data/app
+data/real_world/media
+data/controlled_variants/media
+tests
