@@ -2,7 +2,7 @@
 
 **ORVEX - Origin and Relationship Verification Explorer.** *Trace the Origin. Reveal the Connections.*
 
-Hackathon submission for **IDEA//FORGE Online Hackathon** (capstone project PW_27_BS_01, PES University).
+Submission for the **IDEA//FORGE Online Hackathon**.
 
 | | |
 |---|---|
@@ -98,7 +98,7 @@ Hugging Face Space (SDK: Docker) built from `Dockerfile`; variable `ORVEX_MEDIA_
 ## Licences and attribution
 - **Videos.** Originals come from Wikimedia Commons (CC BY, CC BY-SA, CC0 or public domain, recorded per file) and from the ANAKIN dataset (CC BY 4.0 according to its dataset card). Variants are edited copies; variants of CC BY-SA sources stay under CC BY-SA. Authors, titles and licences are in `data/manifests/attribution.csv`, `docs/datasets/ORVEX_ATTRIBUTION.md` and `data/media_manifest.csv`. ANAKIN's videos originate from Vimeo; the CC BY 4.0 licence is taken from the ANAKIN dataset card and was not re-verified for every underlying creator. If you are a rights holder and want a file removed, open an issue.
 - **Third-party datasets** (FIVR, VCSL, FVC, COVID misinformation tweets) appear as **metadata only**; no videos from them are redistributed.
-- **Code.** Written for this capstone and hackathon. No open-source licence has been chosen yet; the authors will add one.
+- **Code.** Written for this hackathon. No open-source licence has been chosen yet; the author will add one.
 
-## Team
-Capstone PW_27_BS_01, PES University. Guide: Prof. Bharathi D S. Team: Chiranthan B S Raj, Bhuvan Kumar P, A Raviteja, Darshan G S.
+## Author
+Chiranthan B S Raj

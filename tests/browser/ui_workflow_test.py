@@ -6,7 +6,7 @@ import os, sys
 from playwright.sync_api import sync_playwright
 
 B = os.environ.get("ORVEX_URL", "http://localhost:5173")
-CHROME = os.environ.get("CHROME", "C:/Users/Chiranthan B S Raj/AppData/Local/ms-playwright/chromium-1255/chrome-win64/chrome.exe")
+CHROME = os.environ.get("CHROME", "")   # optional: path to a Chrome/Chromium executable; empty = Playwright's own browser
 OUT = os.path.join(os.path.dirname(__file__), "shots"); os.makedirs(OUT, exist_ok=True)
 res = []
 

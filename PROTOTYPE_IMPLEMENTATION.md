@@ -32,7 +32,7 @@ Browser  ->  Hugging Face Space (Docker, one container)
 
 ## 1. Project overview
 
-**ORVEX** (Origin and Relationship Verification Explorer) is a capstone project (PES University, PW_27_BS_01). The idea: given one *reference video*, find other videos that are copies, edits or re-uploads of it, work out which one came first, and keep the evidence so that a human investigator can accept or reject each finding.
+**ORVEX** (Origin and Relationship Verification Explorer) is a project built for the IDEA//FORGE hackathon. The idea: given one *reference video*, find other videos that are copies, edits or re-uploads of it, work out which one came first, and keep the evidence so that a human investigator can accept or reject each finding.
 
 **The problem:** the same video is trimmed, cropped, captioned, re-compressed or re-shared many times. Looking at two files, it is hard to tell whether they are related, and which one is the parent.
 
